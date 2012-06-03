@@ -1,0 +1,31 @@
+\select@language {lithuanian}
+\contentsline {section}{\IeC {\v Z}ymenys ir santrumpos}{8}
+\contentsline {section}{\numberline {1.}\IeC {\k I}vadas. U\IeC {\v z}duoties analiz\IeC {\.e}}{9}
+\contentsline {section}{\numberline {2.}Analogi\IeC {\v s}k\IeC {\k u} sistem\IeC {\k u} ap\IeC {\v z}valga}{11}
+\contentsline {section}{\numberline {3.}Naudojam\IeC {\k u} metod\IeC {\k u} ap\IeC {\v z}valga}{13}
+\contentsline {subsection}{\numberline {3.1.}HRTF funkcijos}{13}
+\contentsline {subsection}{\numberline {3.2.}Galvos \IeC {\v s}e\IeC {\v s}\IeC {\.e}lis ir pe\IeC {\v c}i\IeC {\k u} aidas}{13}
+\contentsline {subsection}{\numberline {3.3.}Tarpausinis laiko skirtumas}{14}
+\contentsline {subsection}{\numberline {3.4.}Tarpausinis garso lygi\IeC {\k u} skirtumas}{14}
+\contentsline {subsection}{\numberline {3.5.}HRTF metodo panaudojimas}{15}
+\contentsline {subsection}{\numberline {3.6.}Duplekso teorija}{15}
+\contentsline {subsection}{\numberline {3.7.}Kambario impulsinis atsakas}{20}
+\contentsline {subsection}{\numberline {3.8.}Skyriaus apibendrinimas}{20}
+\contentsline {section}{\numberline {4.}Sistemos k\IeC {\=u}rimas}{21}
+\contentsline {subsection}{\numberline {4.1.}Sistemos strukt\IeC {\=u}rin\IeC {\.e} schema}{21}
+\contentsline {subsection}{\numberline {4.2.}Jutikli\IeC {\k u} duomen\IeC {\k u} sintez\IeC {\.e}s filtras}{22}
+\contentsline {subsection}{\numberline {4.3.}Garso apdorojimo mechanizmas}{24}
+\contentsline {subsection}{\numberline {4.4.}Galvos sekimo \IeC {\k i}renginys}{28}
+\contentsline {subsection}{\numberline {4.5.}Binauralinio garso efekto mechanizmo algoritmas}{29}
+\contentsline {subsection}{\numberline {4.6.}KIA generavimas}{30}
+\contentsline {subsection}{\numberline {4.7.}Sistemos vartotojo s\IeC {\k a}saja asmeniniame kompiuteryje}{34}
+\contentsline {subsection}{\numberline {4.8.}Realios sistemos specifikacija}{34}
+\contentsline {subsection}{\numberline {4.9.}Skyriaus apibendrinimas}{39}
+\contentsline {section}{\numberline {5.}Sistemos patikra}{40}
+\contentsline {subsection}{\numberline {5.1.}Galvos sekimo \IeC {\k i}renginys}{40}
+\contentsline {subsubsection}{\numberline {5.1.1.}Jutikli\IeC {\k u} duomen\IeC {\k u} sintez\IeC {\.e}s tikslumo tyrimas}{40}
+\contentsline {subsubsection}{\numberline {5.1.2.}Energijos suvartojimo patikra}{42}
+\contentsline {subsection}{\numberline {5.2.}Garso apdorojimo \IeC {\k i}renginio patikra}{43}
+\contentsline {subsubsection}{\numberline {5.2.1.}Energijos suvartojimo patikra}{44}
+\contentsline {subsubsection}{\numberline {5.2.2.}Garso generavimo tikslumas}{46}
+\contentsline {section}{\numberline {6.}Rezultat\IeC {\k u} apibendrinimas. I\IeC {\v s}vados}{48}
