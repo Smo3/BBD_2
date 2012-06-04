@@ -559,9 +559,11 @@ Tai yra maksimalus įmanomas (teorinis) Atmega8 taktinis darbo dažnis. Šį da�
 
 Šiame skyriuje buvo pateiktas ir aprašytas sistemos veikimas. Pateiktos blokinės schemos, trumpai aprašytas \textit{Matlab} terpėje sukurtas išeities kodas koncepcijai patikrinti. Realios sistemos specifikacijoje aprašyta sistemos schemotechnika, pademonstruotos ir paaiškintos darbo metu sukurtos plokštės.
 
+Reikia paminėti, jog pateiktose schemose vis dar yra nedidelių netikslumų, kurie netrikdo bendro sistemos darbo, tačiau juos ištaisius galima pasiekti geresnius našumo rezultatus.
+
 \section{Sistemos patikra}
 
-Šiame skyriuje bus aptarta sistemos partikra bei jos eiga. Bus bandoma pademonstruoti, jog baigiamojo bakalauro darbo metu sukurta sistema atitinka jai iškeltus techninius reikalavimus.
+Šiame skyriuje bus aptarta sistemos patikra bei jos eiga. Bus bandoma pademonstruoti, jog baigiamojo bakalauro darbo metu sukurta sistema atitinka jai iškeltus techninius reikalavimus.
 
 \subsection{Galvos sekimo įrenginys}
 
@@ -578,7 +580,7 @@ Didelis dėmesys buvo skirtas jutiklių duomenų sintezei. Algoritmo tikslumas b
   \label{fig:headtracker_test1}
 \end{figure}
 
-Kaip matoma iš \ref{fig:headtracker_test1} pav. lapas suskirstytas į lygias dalis po 45$^\circ$. Testo pradžioje galvos sekimo įrenginys buvo padėtas ties 0$^\circ$ žyme ir sukalibruotas. Kaskart pasukant galvos sekimo įrenginį 45$^\circ$ kampu buvo užfiksuojami jutiklių duomenų sintezės rodmenys, tai iliustruoja \ref{fig:headtracker_test2} pav. Šis testas buvo atliktas po 40 kartų su kiekviena ašimi. Rezultate gauti duomenys parodė pakankamai gerą tikslumą ir toleruotiną paklaidą. Reikia paminėti, jog toks testas nėra labai tikslus, tačiau jis leižia padaryti preliminiarias išvadas dėl sistemos tikslumo. Testų rezultatus atspindi \ref{fig:headtracker_test3} pav. 
+Kaip matoma iš \ref{fig:headtracker_test1} pav. lapas suskirstytas į lygias dalis po 45$^\circ$. Testo pradžioje galvos sekimo įrenginys buvo padėtas ties 0$^\circ$ žyme ir sukalibruotas. Kaskart pasukant galvos sekimo įrenginį 45$^\circ$ kampu buvo užfiksuojami jutiklių duomenų sintezės rodmenys, tai iliustruoja \ref{fig:headtracker_test2} pav. Šis testas buvo atliktas po 40 kartų su kiekviena ašimi. Rezultate gauti duomenys parodė pakankamai gerą tikslumą ir toleruotiną paklaidą. Reikia paminėti, jog toks testas nėra labai tikslus, tačiau jis leižia padaryti preliminarias išvadas dėl sistemos tikslumo. Testų rezultatus atspindi \ref{fig:headtracker_test3} pav. 
 
 \begin{figure}[htbp]
   \centering
@@ -673,6 +675,11 @@ Kaip buvo minėta įvade, vienas svarbiausių sistemos vertinimo kriterijų -- s
 
 \ref{fig:garsas_diff} pav. iliustruoja garso takelių skirtumą. Kaip matome, maksimalus skirtumas yra 0,5 dB. Skirtumas, galimai, atsirado dėl originalaus garso takelio glaudinimo (nes originalaus binauralinio įrašo WAV byla buvo gauta ją konvertavus iš MP3 bylos), taip pat skirtumą sukuria skirtumai tarp aprašyto virtualaus kambario ir įrašymo metu buvusio tikrojo kambario parametrų. 
 
+Kartu su generavimo tikslumu buvo matuojamas ir garso vėlinimas. Palyginus \ref{fig:garsas_orig} pav. su \ref{fig:garsas_gen} pav. galima pastebėti tam tikrą generuoto garso vėlavimą, kuris sudaro 2,3 ms. Tai pilnai atitinka darbo užduotyje nurodytą maksimalų 0,3 s garso vėlinimą.
+
+\subsection{Skyriaus apibendrinimas}
+
+Šiame skyriuje buvo aptarti pagrindiniai sistemos parametrai ir savybės. Bandymų metu sistema parodė labai gerą veikimą, kuris pilnai atitinka darbo užduotyje nurodytus parametrus: bendras sistemos vėlinimas sudaro 2,3 ms; galvos sekimo įrenginio paklaida neviršija 15\%; sistemos maksimalus elektros srovės suvartojimas tesiekia tik apie 340 mA. Esamos sistemos parametrai vertinami labai gerai. Bendras sistemos darbo algoritmas gali būti patobulintas, kas leistų dar labiau sumažinti suvartojamą srovę, galvos sekimo įrenginio paklaidą bei vėlinimą.
 
 \section{Rezultatų apibendrinimas. Išvados}
 
