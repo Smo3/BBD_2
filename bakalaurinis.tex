@@ -680,17 +680,28 @@ Kaip buvo minėta įvade, vienas svarbiausių sistemos vertinimo kriterijų -- s
 Bakalaurinio darbo metu ištirta galimybė realiuoju laiku generuoti binauralinį garsą priklausomai nuo vartotojo galvos orientacijos. Kompiuterinių simuliacijų eigoje nustatyta, jog tokia sistema gali būti sukurta. Tuo remiantis buvo sukurtas sistemos prototipas pilnai atitinkantis visus darbo pradžioje iškeltus reikalavimus. Sistema yra tobulintina, tačiau pilnai atlieka visas užsibrėžtas funkcijas.
 
 % Kiek gerai veikia sukurtas produktas?
-Sistemos patikros metu nustatytas patenkinamas generavimo tikslumas -- galvos sekimo įrenginio paklaida neviršyja 15\%; ir bendras garso vėlinimas  siekiantis ne daugiau nei 2,3 ms.
+Sistemos patikros metu nustatytas patenkinamas generavimo tikslumas -- galvos sekimo įrenginio paklaida neviršyja 15\%; generuojamas binauralinis garsas praktiškai tiksliai atkartoja testinį garsą. Bendras garso vėlinimas siekia ne daugiau nei 2,3 ms.
 
-% Ar visus iškeltus uždavinius pavyko sėkmingai išspręsti, įgyvendinti?
+Galvos sekimo įrenginyje naudojamas mažos galios \textit{bluetooth} siųstuvas -- imtuvas, bet įrenginys atitinka, priimtą pagal Europos Bendrijos Tarybos direktyvą 89/336/EEB, Elektromagnetinio suderinamumo techninį reglamentą (EMS reglamentas).
 
-
-
-Galvos sekimo įrenginyje naudojamas mažos galios \textit{bluetooth} siųstuvas -- imtuvas, tačiau įrenginys atitinka, priimtą pagal Europos Bendrijos Tarybos direktyvą 89/336/EEB, Elektromagnetinio suderinamumo techninį reglamentą (EMS reglamentas).
-
-Garso apdorojimo įrenginio terminės savybės yra geresnės lyginant su galvos orientacijos sekimo įrenginiu. Tai įtakoja mikrovaldiklis ir periferija, kuri maitinama 3.3 V elektros įtampa, todėl įtaisas yra ganėtinai ekonomiškesnis ir mažiau kaista.
+Garso apdorojimo įrenginio terminės savybės yra geresnės lyginant su galvos orientacijos sekimo įrenginiu. Tai įtakoja mikrovaldiklis ir periferija, kuri maitinama 3,3 V elektros įtampa, todėl įtaisas yra ganėtinai ekonomiškesnis ir mažiau kaista.
 
 Kol kas visos sistemos elektroninė dalis yra tik prototipo stadijoje, todėl visi atlikti matavimai yra preliminarūs ir ateityje gali keistis. Visos sistemos maksimalus elektros srovės suvartojimas tesiekia tik apie 340 mA, o tai atitinka užduoties reikalavimus (500 mA). Esamą srovės suvartojimą dar galima sumažinti anksčiau minėtais būdais, bet tai yra ateities planai ir šiuo metu tai nėra ypatingai aktualu, norint įrodyti ir pademonstruoti sistemos veikimą.
+
+% Ar visus iškeltus uždavinius pavyko sėkmingai išspręsti, įgyvendinti?
+Visi darbo užduotyje iškelti uždaviniai buvo sėkmingai išspręsti ir įgyvendinti. Nors sukurtas algoritmas veikia pakankamai gerai, tačiau kaip buvo minėta anksčiau -- yra tobulintinas.
+
+% Ką reiktų, galima būtų daryti kitaip, norint pagerinti gautus rezultatus ?
+
+Gautus rezultatus galima pagerinti, tam sukūrus tobulesnį binauralinio garso generavimo algoritmą, atsižvelgus į didesnį kiekį aplinkos parametrų bei paderinus naudojamas HRTF funkcijas konkrečiam klausytojui. Iš viso darbo metu buvo panaudoti 504 universalūs HRTF deriniai, Norint išgauti pačius geriausius rezultatus reikėtų panaudoti 32400 personalizuotų HRTF derinių.
+
+Taip pat patogesniam vartojimui reikėtų galvos sekimo įrenginį dar labiau sumažinti, nors dabartinis svoris bei dydis yra patogūs naudojimui, kompaktiškesnis įrenginys suteiktų dar daugiau laisvės vartotojui.
+
+% Ar pasirinktos darbo priemonės pateisino lūkeščius?
+
+Darbe panaudotos priemonės lūkesčius pateisino iš dalies. Kaip ir buvo galima tikėtis universalūs HRTF deriniai netinka kiekvienam vartotojui. Bandymų metu maždaug $17~\%$ dalyvių prisipažino jog binauralinio garso efektas buvo sunkiai juntamas, tai įtakojo panaudoti universalūs HRTF funkcijų deriniai.
+
+
 
 
 \end{document}
