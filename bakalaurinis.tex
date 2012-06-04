@@ -499,19 +499,19 @@ Pateiktas \textit{Matlab} paketo išeities kodo fragmentas \ref{code:RIA_gen} sk
 
 \subsection{Sistemos vartotojo sąsaja asmeniniame kompiuteryje}
 
-Kadangi sistema pritaikyta asmeniniam kompiuteriui, ji privalo turėti grafinę vartotojo sąsają. Pagrindinė vartotojo sąsajos užduotis -- surinkti galvos sekimo įrenginio duomenis ir juos kartu su garso šaltinio informacija išsiųsti į garso apdorojimo įrenginį tolimesniam apdorojimui.
+Kadangi sistema pritaikyta asmeniniam kompiuteriui, ji privalo turėti grafinę vartotojo sąsaja. Pagrindinė vartotojo sąsajos užduotis -- surinkti galvos sekimo įrenginio duomenis ir juos kartu su garso šaltinio informacija išsiųsti į garso apdorojimo įrenginį tolimesniam apdorojimui.
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=250px]{img/GUI.png}
-  \caption{Galvos orientacijos sekimo įrenginio elektrinės – principinės schemos mikrovaldiklio dalis}
+  \caption{Sistemos vartotojo sąsaja asmeniniame kompiuteryje}
   \label{fig:GUI}
 \end{figure}
 
 Kaip matoma iš \ref{fig:GUI} pav., vartotojo sąsaja yra pakankamai minimalistinė ir lengvai perprantama. Programinės įrangos langas suskirstytas į dvi dalis: kambario ir garso šaltinio informacijos nustatymus.
-Teisingam sistemos darbui, būtina nustatyti pagrindinius kambario parametrus reikalingus KIA generavimui. Parametrų sąrašą sudaro: ilgis, plotis, aukštis ir kambario sienų sugerties koeficientas $R$, pastarasis turi būti -1$\leq$R$\leq$1 intervale.
-Garso šaltiniui nustatyti pakanka aprašyti jo vietą virtualiame kambaryje ($x, y, z$) ir nurodyti garso bylą.
-Kadangi sistema dirba naudojant FT232 mikroschemą, būtina nurodyti virtualų COM prievadą, per kurį kompiuteryje esanti programa bei garso apdorojimo įrenginys komunikuos. 
+Teisingam sistemos darbui būtina nustatyti pagrindinius kambario parametrus reikalingus KIA generavimui. Parametrų sąrašą sudaro: ilgis, plotis, aukštis ir kambario sienų sugerties koeficientas $R$, pastarasis turi būti -1$\leq$R$\leq$1 intervale.
+Garso šaltiniui nustatyti pakanka aprašyti jo vietą virtualiame kambaryje ($x$, $y$, $z$) ir nurodyti garso bylą.
+Kadangi sistema dirba naudojant FT232 mikroschemą, būtina nurodyti virtualų COM prievadą per kurį kompiuteryje esanti programa bei garso apdorojimo įrenginys komunuikuos. 
 
 \subsection{Realios sistemos specifikacija}
 
