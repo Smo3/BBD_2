@@ -12,9 +12,16 @@
 
 \begin{document}
 
-\setcounter{page}{7}
+\setcounter{page}{1}
 %\setcounter{totalnumber}{4}
 \onehalfspacing
+
+\newpage
+\newpage
+\newpage
+\newpage
+\newpage
+\newpage
 
 \tableofcontents
 
@@ -368,6 +375,8 @@ Kaip matoma iš \ref{fig:garso_apdorojimas} pav., programos algoritmas prasideda
 \end{figure}
 
 Kaip matome iš \ref{fig:head_tracker} pav., programos kodo pradžioje vyksta kintamųjų sukūrimas bei naudojamų įėjimų išėjimų nustatymas. Kadangi naudojamų jutiklių duomenų perdavimo standartinis protokolas yra I2C\footnote{  I2C - (angl. \textit{Inter-Integrated Circuit}) -- tai Philips korporacijos sukurtas komunikavimo protokolas naudojamas žemo greičio įrenginiamssujungti su įterptinėmis sistemomis arba kompiuterių pagrindinėmis plokštėmis.}, todėl reikia įgyvendinti I2C protokolo nustatymo mikrovaldiklyje operacijas. Pasirinktas mikrovaldiklis \textit{Atmel Atmega8} savyje turi aparatinio lygio I2C valdymo bloką. Pagal specifikacinį AVR mikrovaldiklio aprašą, norint įgalinti I2C protokolą, reikia nustatyti duomenų perdavimo dažnį. Pasirinktas dažnis – 400 kHz. Tolimesnis programos kodas – tai jutiklių pradinių parametrų nustatymas. Norint panaudoti \textit{bluetooth} duomenų perdavimo ryšį, naudojamas UART protokolas. \textit{Atmega8} mirkovaldiklis taip pat turi aparatinio lygio UART protokolo bloką. Taigi tinkamam pastarojo veikimui, reikia jį įgalinti programiškai kaip ir I2C protokolą. Pasirinkta duomenų perdavimo sparta – 57 600 bodų per sekundę.
+
+\noindent
 Giroskopo L3G4200D pradiniai nustatymai:
 
 \begin{itemize}
@@ -375,6 +384,7 @@ Giroskopo L3G4200D pradiniai nustatymai:
 \item Nustatomi standartiniai registrų nustatymai.
 \end{itemize}
 
+\noindent
 Magnetometro LSM303DLH pradiniai nustatymai:
 
 \begin{itemize}
@@ -383,6 +393,7 @@ Magnetometro LSM303DLH pradiniai nustatymai:
 \item Parenkamas nenutrūkstantis duomenų atnaujinimas.
 \end{itemize}
 
+\noindent
 Akselerometro LSM303DLH pradiniai nustatymai:
 
 \begin{itemize}
@@ -499,7 +510,7 @@ Pateiktas \textit{Matlab} paketo išeities kodo fragmentas \ref{code:RIA_gen} sk
 
 \subsection{Sistemos vartotojo sąsaja asmeniniame kompiuteryje}
 
-Kadangi sistema pritaikyta asmeniniam kompiuteriui, ji privalo turėti grafinę vartotojo sąsaja. Pagrindinė vartotojo sąsajos užduotis -- surinkti galvos sekimo įrenginio duomenis ir juos kartu su garso šaltinio informacija išsiųsti į garso apdorojimo įrenginį tolimesniam apdorojimui.
+Kadangi sistema pritaikyta asmeniniam kompiuteriui, ji privalo turėti grafinę vartotojo sąsaja. Pagrindinė vartotojo sąsajos užduotis -- surinkti galvos sekimo įrenginio duomenis ir juos kartu su garso šaltinio informacija išsiųsti į garso apdorojimo įrenginį tolimesniam apdorojimui. Šiai užduočiai įgyvendinti buvo pasirinkta C\# programavimo kalba ir \textit{Microsoft Visual Studio 2010} programavimo aplinka.
 
 \begin{figure}[htbp]
   \centering
@@ -708,7 +719,42 @@ Taip pat, patogesniam vartojimui, reikėtų galvos sekimo įrenginį dar labiau 
 
 Darbe panaudotos priemonės lūkesčius pateisino iš dalies. Kaip ir buvo galima tikėtis, universalūs HRTF deriniai netinka kiekvienam vartotojui. Bandymų metu, maždaug $17~\%$ dalyvių prisipažino, jog binauralinio garso efektas buvo sunkiai juntamas. Tai įtakojo panaudoti universalūs HRTF funkcijų deriniai.
 
+\section{Literatūros ir informacinių šaltinių sąrašas}
 
+\begin{enumerate}
+\item J. Merimaa and V. Pulkki, Spatial Impulse Response Rendering I: Analysis and Synthesis, J. Audio Eng. Soc., vol. 53, no. 12, pp. 1115-1127, 2005. 
+\item B. C. J. Moore, An Introduction to the Psychology of Hearing, 5th edition, Elsevier Academic Press, London, UK, 2004.
+\item D.R. Begault. 3D sound for virtual reality and multimedia. Academic Press. 1994.
+\item Massachusetts Institute of Technology, 
+\item Internetas, “http://sound.media.mit.edu/KEMAR.html”, rugpjūčio 2006.
+\item Jyri Huopaniemi and Matti Karjalainen, HRTF Filter design based on auditory criteria, Proceedings of Nordic Acoustical Meeting, Helsinki, Helsinki University of Technology, Finland. balandis 1996.
+\item K. Raghunath Rao and Jezekiel Ben-Arie, Optimal Head Related Transfer Functions for Hearing and Monaural Localization in Elevation: A Signal Processing Design Perspective, University of Illinois at Chicago, rupjūtis 2000.
+\item DeLiang Wang and Guy J. Brown, Computational Auditory Scene Analysis, John Wiley \& Sons, Inc., 2005
+\item J. L. Marins, Xiaoping Yun, E. R. Bachmann, R. B. McGhee, and M. J. Zyda. An extended
+\item Kalman filter for quaternion-based orientation estimation using marg sensors. In Proc. IEEE/RSJ International Conference on Intelligent Robots and Systems, volume 4, puslapiai 2003-2011, spalio 29 - lapkričio 3, 2001.
+\item An eficient orientation filter for inertial and inertial/magnetic sensor arrays, Sebastian O.H. Madgwick, balandžio 30, 2010
+\item New method for extracting the quaternion from a rotation matrix, Itzhack Y Bar-Itzhack, AIAA Journal of Guidance, Control and Dynamics, 23(6):10851087, lapkritis-gruodis 2000.
+\item Image Method for Eficiently Simulating Small Room Acoustics, J. Allen and D. Berkley, Journal of the Acoustical Society of America, vol. 65, no. 4, puslapiai. 943-950, 1979.
+\item Algorithmic representation of the ray tracing technique, A. Kulowski, Applied Acoustics, vol. 18, no. 6, puslapiai 449-469, 1985.
+\item Finite-difference time-domain simulation of low-frequency room acoustic problems, D. Botteldoore, Journal of the Acoustical Society of America, vol. 98, no. 6, puslapiai. 3302-3308, 1995.
+\end{enumerate}
 
+\section*{PRIEDAI}
+\addcontentsline{toc}{section}{PRIEDAI}
+
+\subsection*{1 priedas. Garso apdorojimo įrenginio pagrindinė funkcija.}
+\label{subsec:pca_source}
+
+\begin{cfigure}[!b]
+  \centering
+  \caption{Garso apdorojimo įrenginio pagrindinė funkcija}
+  \lstinputlisting{sources/STM32_MAIN.c}
+\end{cfigure}
+
+\begin{cfigure}[!b]
+  \centering
+  \caption{Garso apdorojimo įrenginio pagrindinė funkcija. Tęsinys.}
+  \lstinputlisting{sources/STM32_MAIN2.c}
+\end{cfigure}
 
 \end{document}
