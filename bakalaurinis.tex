@@ -76,9 +76,9 @@ reikalingas norint vartotojo sąsają padaryti patrauklesnę vartotojui, t. y. g
 \textit{Windows 7} operacinėje sistemoje, nes senesnių operacinių sistemų versijų (\textit{XP}, \textit{Vista}) \textit{Microsoft} korporacijos palaikymas bus 
 nutraukiamas artimiausiu metu.
 
-Garso apdorojimo įrenginyje bus naudojama ne mažesnė nei 1.1 USB lizdo versija, nes sistema suprojektuota darbui su šia ar aukštesnėmis versijomis. Duomenų perdavimą taipogi būtų galima realizuoti ir kitomis sąsajomis, tokiomis kaip COM, bet tokiu atveju greitis būtų nepakankamas ir sistema įgautų netoleruotiną vėlinimą. Be to, binauralinio garso generavimo sistema yra šiuolaikinė ir labiau taikoma nešiojamiems kompiuteriams, kuriuose nebediegiami RS232 prievadai. Galimybė naudoti RS232 prievadą įmanoma, bet tokiu atveju tektų papildomai turėti iš USB į COM keitiklio kabelį, kuris taip pat naudoja USB jungtį. Todėl geriausias pasirinkimas spartos atžvilgiu rinktis virtualų COM prievadą per USB jungtį.
+Garso apdorojimo įrenginyje bus naudojama ne mažesnė nei 1.1 USB prievado versija, nes sistema suprojektuota darbui su šia ar aukštesnėmis versijomis. Duomenų perdavimą būtų galima realizuoti ir kitomis sąsajomis, tokiomis kaip RS232 nuosekliuoju prievadu, bet tokiu atveju greitis būtų nepakankamas ir sistema neatitiktų darbo užduotyje nurodyto vėlinimo. Be to, binauralinio garso generavimo sistema yra šiuolaikinė ir labiau taikoma nešiojamiems kompiuteriams, kuriuose nebediegiami RS232 prievadai. Galimybė naudoti RS232 prievadą įmanoma, bet tokiu atveju tektų papildomai turėti iš USB į COM keitiklio kabelį, kuris taip pat naudoja USB jungtį. Todėl geriausias pasirinkimas spartos atžvilgiu rinktis virtualų COM prievadą per USB jungtį.
 
-Siekiant išlaikyti kuriamos sistemos kuo ilgesnį autonominio veikimo laiką sistema toleruoja maksimalų 0,5 A srovės suvartojimą (tiek galvos orientacijos nustatymo įrenginys, tiek garso apdorojimo įrenginys), be to 0,5 A tai didžiausia srovė, kurią pagal specifikaciją gali atiduoti USB 1.1 ir USB 2.0 prievadai.
+Siekiant išlaikyti kuriamos sistemos kuo ilgesnį autonominio veikimo laiką, sistema suprojektuota suvartoti maksimaliai 0,5 A srovės (tiek galvos orientacijos nustatymo įrenginys, tiek garso apdorojimo įrenginys), be to 0,5 A tai didžiausia srovė, kurią pagal specifikaciją gali suteikti USB 1.1 ir USB 2.0 prievadai.
 
 Norint išlaikyti sistemos mobilumą, kurio didžioji dalis priklauso nuo galvos sekimo įrenginio dydžio, buvo pasirinkti pakankamai nedideli pastarojo įrenginio maksimalūs matmenys: 50 $\times$ 100 $\times$ 100 mm.
 
@@ -90,9 +90,9 @@ Sistemos veikimas bus vertinamas sugeneruoto binauralinio garso tikslumu (palygi
 Šiame skyriuje bus apžvelgtos analogiškos sistemos: buvę prototipai ir šiuo metu esami rinkoje produktai. Apibendrintai bus aptarti nagrinėjamų sistemų teigiamos ir neigiamos savybės. 
 
 
-Galvos sekimo įrenginio kūrimas nėra naujiena. Tokie įrenginiai naudojami norint nustatyti lėktuvų  trimatę poziciją. Pati \textit{sensor fusion} technologija taip pat jau gana ilgai naudojama aviacijos srityje, norint kur kas tiksliau nustatyti poziciją.
+Orientacijos sekimo įrenginiai naudojami norint nustatyti lėktuvų  trimatę poziciją. Pati \textit{sensor fusion} technologija taip pat jau gana ilgai naudojama aviacijos srityje, norint kur kas tiksliau nustatyti poziciją.
 
-Kalbant apie binauralinio garso generavimą realiu laiku, paieškos rezultatai stipriai sumažėja. Tokio tipo projektų pasaulyje yra tik du. Projekto tikslas – binauralinio garso generavimas realiu laiku. Vienas iš projektų naudojo \textit{Texas instruments} pagamintą plokštę -- C6713 DSK, kuri pavaizduota \ref{fig:C6713_dsk_board} pav.
+Tokio tipo sistemų pasaulyje yra tik keletas. Projekto tikslas – binauralinio garso generavimas realiu laiku. Vienas iš projektų naudojo \textit{Texas instruments} pagamintą plokštę -- C6713 DSK, kuri pavaizduota \ref{fig:C6713_dsk_board} pav.
 
 \begin{figure}[!ht]
   \centering
@@ -103,7 +103,7 @@ Kalbant apie binauralinio garso generavimą realiu laiku, paieškos rezultatai s
 
 Šios plokštės mikrovaldiklis dirba 225 MHz dažniu ir pasiekia 1800 milijonų instrukcijų per sekundę spartą. Taip pat ši plokštė gali atkurti aukštos kokybės 24 bitų skaitmeninį stereogarsą, turi 512 kB \textit{Flash} bei 16 MB SDRAM atminties. JTAG\footnote{  JTAG -- programavimo ir testavimo jungtis.} prieinamas per USB jungtį.
 
-Kaip teigia gaminio kūrėjai, jie generuoja binauralinį garsą naudojant specialų stereo filtrą suprogramuotą minėtoje plokštėje. Programinė įranga naudoja HRTF sugeneruotas \textit{Floridos tarptautinio universiteto} asmenų (nepaminėta kieno). Dviejų kanalų išėjimui panaudotos 12 \textit{HRTF} funkcijų, kurios taip pat nebuvo sugeneruotos projekto autorių. 
+Kaip teigia gaminio kūrėjai, jie generuoja binauralinį garsą naudojant specialų stereo filtrą suprogramuotą minėtoje plokštėje. Programinė įranga naudoja HRTF sugeneruotas \textit{Floridos tarptautinio universiteto} asmenų. Dviejų kanalų išėjimui panaudotos 12 \textit{HRTF} funkcijų, kurios taip pat nebuvo sugeneruotos projekto autorių. 
 
 Kūrėjų teigimu, rezultatai jų stipriai nestebina – geriausias efektas jaučiamas tik garsui esant už galvos, nes panaudotos HRTF funkcijos nėra pritaikytos jų ausims. Šio įrenginio testavimo akimirką demonstruoja \ref{fig:C6713_dsk_board_checkout} pav.
 
@@ -115,22 +115,22 @@ Kūrėjų teigimu, rezultatai jų stipriai nestebina – geriausias efektas jau�
 \end{figure}
 
 
-Kompiuterinis binauralinio garso generavimas yra įmanomas, bet reikalauja didelių kompiuterio resursų, taip atimdamas galią iš centrinio procesoriaus, todėl kuriamos išorinės garso plokštės, kurios nepriklausomai nuo kompiuterio procesoriaus gali generuoti binauralinį garsą naudojant HRTF funkcijas.
+Kompiuterinis binauralinio garso generavimas yra įmanomas, bet reikalauja didelių kompiuterio resursų, taip atimdamas skaičiavimo resursus iš kompiuterio centrinio procesoriaus, todėl kuriamos išorinės garso plokštės, kurios nepriklausomai nuo kompiuterio centrinio procesoriaus gali generuoti binauralinį garsą naudojant HRTF funkcijas.
 
-Pirmasis garso rinkoje pasirodęs produktas, galėjęs pasiūlyti trimatį pozicinį garso generavimą, buvo 1998 m. išleista \textit{Aureal Vortex via the A3D API} garso plokštė. Deja, nėra  galimybės jos išbandyti, bet pagal vartotojų atsiliepimus ši plokštė sugebėdavo gana gerai suformuoti trimačio garso pojūtį. Kadangi įmonė \textit{Aureal} pasitraukė iš rinkos, tai jos poziciją perėmė \textit{Creative Inc.} firma. Gerą garso kokybę bei neblogą trimačio garso efektą gali pasiūlyti tik labai brangios pastarosios įmonės garso plokštės – \textit{X-Fi}. 
+Pirmasis garso rinkoje pasirodęs produktas, galėjęs pasiūlyti trimatį pozicinį garso generavimą, buvo 1998 m. išleista \textit{Aureal Vortex via the A3D API} garso plokštė. Kadangi įmonė \textit{Aureal} pasitraukė iš rinkos, tai jos poziciją perėmė \textit{Creative Inc.} firma. Kokybišką garso kokybę bei trimačio garso efektą gali pasiūlyti tik labai brangios pastarosios įmonės garso plokštės – \textit{X-Fi}. 
 
-Šiuo metu binauralinio garso generavimas realiu laiku priklausomas nuo vartotojo galvos pozicijos neturi jokių analogų. Kaip ir buvo minėta, atskirai abi dalys yra daugiau ar mažiau naudojamos pasaulinėje rinkoje, bet būtent šių dviejų sričių sujungimas yra visiškai unikalus, todėl analogiškų sistemų apžvalga čia yra neįmanoma.
+Taigi šiuo metu binauralinio garso generavimas realiu laiku priklausomas nuo vartotojo galvos pozicijos neturi jokių analogų. Kaip ir buvo minėta, atskirai abi dalys yra daugiau ar mažiau naudojamos pasaulinėje rinkoje, bet būtent šių dviejų sričių sujungimas yra unikalus.
 
-Kaip buvo minėta apžvalgoje sistema pasiūlytame pavidale yra unikali ir perspektyvi. Šiuo metu rinkoje nėra įrenginių, gebančių sugeneruoti bunauralinį garsą priklausomai nuo klausytojo galvos orientacijos. Rinkoje esantys analogai suteikia programuotojams galimybę įgyvendinti šį efektą naudojantis papildomais programiniais įrankiais, tačiau įrenginių, gebančių tai padaryti savaime, be papildomo programuotojų įsikišimo, nėra.
+%TODO apibendrinimas
 
 \section{Naudojamų metodų apžvalga}
 \label{sect:naudojami_metodai}
 
-Šiame skyriuje bus apžvelgti metodai, kuriais remiantis buvo sukurti matematiniai modeliai ir realios sistemos prototipas.
+Šiame skyriuje bus apžvelgti metodai, kuriais remiantis sukurti matematiniai modeliai ir realios sistemos prototipas.
 
 \subsection{HRTF funkcijos}
 
-HRTF ir ATF tai funkcijos, nusakančios atsaką, kuris charakterizuoja, kaip žmogaus ausis priima garsą, sklindantį iš tam tikro taško erdvėje. Panaudojus HRTF porą, skirtą kiekvienai ausiai, įmanoma sintezuoti binauralinį garsą taip sukuriant erdvės pojūtį.  
+HRTF ir ATF yra porinės funkcijos, kurios nusako atsaką kaip žmogaus ausis priima sklindantį iš taško erdvėje garsą. Panaudojus HRTF porą, skirtą kiekvienai ausiai, įmanoma sintezuoti binauralinį garsą taip sukuriant erdvės pojūtį.  
 Žmogaus smegenys apskaičiuoja garso šaltinio poziciją erdvėje naudojantis: 1) garso užuominomis atkeliavusiomis į kiekvieną ausį (angl. \textit{monoaural cues}), 2) abiejų ausų garso užuominų palyginimu (angl. \textit{difference cues} arba \textit{binaural cues}). Pagrindinės garso užuominos yra:
 \begin{enumerate}
 \item Tarpausinis laiko skirtumas (angl. \textit{Interaural Time Difference}).
