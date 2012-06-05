@@ -12,44 +12,31 @@
 
 \begin{document}
 
-\setcounter{page}{1}
+\setcounter{page}{8}
 %\setcounter{totalnumber}{4}
 \onehalfspacing
 
-\newpage
-
-  .
-
-\newpage
-
-    .
-
-\newpage
-
-  .  .
-  
-\newpage
-
-  .  .
-  
-\newpage
-
-  .  .
-  
-\newpage
-
-  .  .
-
-\newpage
-
-  .  .
-\newpage
-
-  .  .
-\newpage
-
-  .  .
-
+%\newpage
+%  .
+%\newpage
+%    .
+%\newpage
+%  .  .
+%  
+%\newpage
+%  .  .
+%  
+%\newpage
+%  .  .
+%  
+%\newpage
+%  .  .
+%\newpage
+%  .  .
+%\newpage
+%  .  .
+%\newpage
+%  .  .
 
 \tableofcontents
 
@@ -123,7 +110,7 @@ Kūrėjų teigimu, rezultatai jų stipriai nestebina – geriausias efektas jau�
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=390px]{img/c6713_patikra.jpg}
-  \caption{C6713 DSK plokštės patikra}
+  \caption{C6713 DSK plokštės patikra [3]}
   \label{fig:C6713_dsk_board_checkout}
 \end{figure}
 
@@ -161,9 +148,9 @@ HRTF aprašo tik dalį iš aukščiau pateiktų užuominų: TLS ir TGLS.
 
 \subsection{Galvos šešėlis ir pečių aidas}
 
-Galvos šešėlis arba dar kitaip vadinamas akustiniu šešėliu, tai sumažėjusios garso amplitudės regionas atsirandantis, nes galva sugeria arba sumažina amplitudę dalies ją pasiekusių garso bangų. Pasiekusi galvą garso banga gali keliauti aplink arba per galvą, kad pasiektų ausį, esančią priešingoje pusėje. Tokiu būdu yra sukuriamas pakankamai geras pirminės lokalizacijos filtras. Ausį, esančią šešėlyje, garsas pasiekia maždaug 0,7 ms vėliau, todėl žmogaus smegenys sugeba nustatyti apytikslią garso sklidimo kryptį. 
+Galvos šešėlis (angl. \textit{Head shadow}) arba dar kitaip vadinamas akustiniu šešėliu, tai sumažėjusios garso amplitudės regionas atsirandantis, dėl to jog galva sugeria dalį garso bangų, o likusiųjų -- sumažina amplitudę. Pasiekusi galvą garso banga gali keliauti aplink arba kiaurai galvą, kad pasiektų ausį, esančią priešingoje pusėje. Tokiu būdu yra sukuriamas pakankamai geras pirminės lokalizacijos filtras. Ausį, esančią šešėlyje, garsas pasiekia maždaug 0,7 ms vėliau, todėl žmogaus smegenys sugeba nustatyti apytikslią garso sklidimo kryptį. 
 
-Pečių aidas -- tai aidas, atsirandantis garso bangom atsispindėjus nuo klausytojo pečių. Toks aidas tiesiogiai turi mažai lokalizacijos informacijos, tačiau sudėjus kartu su galvos šešėliu filtras dar labiau patikslėja.
+Pečių aidas -- tai aidas, atsirandantis garso bangom atsispindėjus nuo klausytojo pečių. Toks aidas tiesiogiai turi mažai lokalizacijos informacijos, tačiau panaudojus jį kartu su galvos šešėliu, filtro tikslumas padidėja.
 
 
 \subsection{Tarpausinis laiko skirtumas}
@@ -191,7 +178,7 @@ Tačiau aukštų dažnių ruože difrakcija pasireiškia žymiai mažiau, kas į
   \label{fig:ILD_1}
 \end{figure}
 
-Taipogi labai svarbi yra spektrinė dedamoji (angl. \textit{pinnae effect}). Dėl kompleksinės ir asimetrinės ausies kriauklės formos garsas, atsispindėjęs nuo ausies kriauklės, spektriškai pasikeičia.  Kartu su pečių atspindžio efektu tai formuoja filtrą, turintį krypties priklausomybę, ir todėl ne taip kaip TLS ir TGLS yra įmanoma atskirti garsus, sklindančius iš priekio ir iš galo. Dėl spektrinių pokyčių ši dedamoji geriausiai tinka atskirti plačiajuostį garsą -- viršijantį 6 kHz dažnį.
+Taipogi labai svarbi yra spektrinė dedamoji (angl. \textit{pinnae effect}). Dėl kompleksinės ir asimetrinės ausies kriauklės formos garsas, atsispindėjęs nuo ausies kriauklės, spektriškai pasikeičia.  Kartu su pečių atspindžio efektu tai formuoja filtrą, turintį krypties priklausomybę, ir todėl ne taip kaip TLS ir TGLS yra įmanoma atskirti garsus, sklindančius iš priekio ir iš galo. Dėl spektrinių pokyčių ši dedamoji geriausiai tinka atskirti garsą -- viršijantį 6 kHz dažnį.
 
 
 \subsection{HRTF metodo panaudojimas}
@@ -204,7 +191,7 @@ Turint baigtinio ilgio skaitmeninį garso signalą atliekama diskrečioji sąsuk
 (f * g)[n] = \sum_{m=0}^{\infty} f[m]*g[n-m]=\sum_{m=0}^{\infty} f[n-m]*g[n]
   \label{equ:conv_1}
 \end{equation}
-
+\noindent
 čia $f$ – vieno kanalo baigtinio ilgio daugianaris (angl. \textit{polynomial}), $g$ – atitinkamo kanalo HRTF funkcija (išreikšta daugianariu), $n$ – daugianario narių skaičius.
 
 Šioje formulėje atliekama dviejų daugianarių daugyba, rezultate gauto daugianario koeficientai atitinka originalaus daugianario ($f$) koeficientų seką po sąsukos, visi likę nežinomi koeficientai yra prilyginami nuliui, kad nekiltų neapibrėžtumas. Šis veiksmas dar žinomas kaip dviejų daugianarių koeficientų \textit{Kauči} daugyba (angl. \textit{Cauchy product}).
@@ -229,7 +216,7 @@ Norint įrodyti Lordo Reilėjaus teoriją, buvo atliktas eksperimentas, kuriame 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=250px]{img/100kHz_grynas.png}
-  \caption{100 kHz grynojo tono gauto manekeno galvoje oscilograma (viršuje – kairioji ausis, apačioje – dešinioji)}
+  \caption{100 kHz grynojo tono gauto manekeno galvoje oscilograma \newline (viršuje – kairioji ausis, apačioje – dešinioji)}
   \label{fig:100kHz_grynas}
 \end{figure}
 
@@ -247,14 +234,14 @@ Norint įrodyti Lordo Reilėjaus teoriją, buvo atliktas eksperimentas, kuriame 
 \begin{figure}[!h]
   \centering
   \includegraphics[width=150px]{img/125kHz_TGLS.png}
-  \caption{Tarpausinis garso lygio skirtumas esant 125 kHz dažniui, kai garso šaltinio kampas manekeno galvos atžvilgiu siekia 90$^\circ$}
+  \caption{Tarpausinis garso lygio skirtumas esant 125 kHz dažniui,\newline kai garso šaltinio kampas manekeno galvos atžvilgiu siekia 90$^\circ$}
   \label{fig:125kHz_TGLS}
 \end{figure}
 
 \begin{figure}[!h]
   \centering
   \includegraphics[width=150px]{img/1000kHz_TGLS.png}
-  \caption{Tarpausinis garso lygio skirtumas esant 1 MHz dažniui, kai garso šaltinio kampas manekeno galvos atžvilgiu siekia 90$^\circ$}
+  \caption{Tarpausinis garso lygio skirtumas esant 1 MHz dažniui,\newline kai garso šaltinio kampas manekeno galvos atžvilgiu siekia 90$^\circ$}
   \label{fig:1000kHz_TGLS}
 \end{figure}
 
@@ -325,7 +312,7 @@ Garso apdorojimo įrenginys – tai baigiamojo bakalauro darbo metu sukurta įte
 \item triašis giroskopas – kampiniam pagreičiui trijose ašyse nustatyti.
 \end{itemize}
 
-Visi šie trys davikliai turi savo stipriąsias ir silpnąsias puses, tačiau \textit{sensor fusion} algoritmai padeda padidinti galutinių duomenų tikslumą. Dažniausiai naudojamas filtras – Kalmano, tačiau dėl didelio matematinio skaičiavimo kiekio (kuris neigiamai įtakoja bendrą mažos galios įterptinės sistemos greitaveiką) šiame darbe buvo pasirinktas paprastesnis \textit{Madgwick sensor fusion} filtras. Palyginus su Kalmano filtru, Madgwicko filtras turi tik vieną žingsnį, per kurį yra apskaičiuojami galutiniai duomenis, atsisakius nuspėjimo ir korekcijos žingsnių (kurie naudojami Kalmano filtre) sutaupomas laikas, todėl padidėja greitaveika. Tačiau atsisakius prieš tai minėtų dviejų žingsnių suprastėja filtro savybės, nes neatsižvelgiama į prieš tai buvusius duomenis.
+Visi šie trys jutikliai turi savo stipriąsias ir silpnąsias puses, tačiau \textit{sensor fusion} algoritmai padeda padidinti galutinių duomenų tikslumą. Dažniausiai naudojamas filtras – Kalmano, tačiau dėl didelio matematinio skaičiavimo kiekio (kuris neigiamai įtakoja bendrą mažos galios įterptinės sistemos greitaveiką) šiame darbe buvo pasirinktas paprastesnis \textit{Madgwick sensor fusion} filtras. Palyginus su Kalmano filtru, Madgwicko filtras turi tik vieną žingsnį, per kurį yra apskaičiuojami galutiniai duomenis, atsisakius nuspėjimo ir korekcijos žingsnių (kurie naudojami Kalmano filtre) sutaupomas laikas, todėl padidėja greitaveika. Tačiau atsisakius prieš tai minėtų dviejų žingsnių suprastėja filtro savybės, nes neatsižvelgiama į prieš tai buvusius duomenis.
 
 Madgwicko filtre orientacijai nusakyti naudojami kvaternionai\footnote{  Kvaternionas (lot. \textit{quattor} – keturi) – skaičių aibė, nekomutatyvus kompleksinių skaičių aibės praplėtimas. }, tokiu būdu išvengiamas ašių užsiblokavimo (angl. \textit{gimbal lock}) efektas. Kvaternionas savo paprasčiausioje formoje aprašomas formule \ref{quaterion_1}, kur $r_{x}$, $r_{y}$, $r_{z}$ yra vektoriaus $r$ kampų reikšmės, $\theta$ – pasukimo kampas, $q_{w}$, $q_{x}$, $q_{y}$, $q_{z}$ – kvaterniono $w$, $x$, $y$, $z$ dedamosios. 
 
@@ -403,7 +390,7 @@ Kaip matoma iš \ref{fig:garso_apdorojimas} pav., programos algoritmas prasideda
   \label{fig:head_tracker}
 \end{figure}
 
-Kaip matome iš \ref{fig:head_tracker} pav., programos kodo pradžioje vyksta kintamųjų sukūrimas bei naudojamų įėjimų išėjimų nustatymas. Kadangi naudojamų jutiklių duomenų perdavimo standartinis protokolas yra I2C\footnote{  I2C - (angl. \textit{Inter-Integrated Circuit}) -- tai Philips korporacijos sukurtas komunikavimo protokolas naudojamas žemo greičio įrenginiamssujungti su įterptinėmis sistemomis arba kompiuterių pagrindinėmis plokštėmis.}, todėl reikia įgyvendinti I2C protokolo nustatymo mikrovaldiklyje operacijas. Pasirinktas mikrovaldiklis \textit{Atmel Atmega8} savyje turi aparatinio lygio I2C valdymo bloką. Pagal specifikacinį AVR mikrovaldiklio aprašą, norint įgalinti I2C protokolą, reikia nustatyti duomenų perdavimo dažnį. Pasirinktas dažnis – 400 kHz. Tolimesnis programos kodas – tai jutiklių pradinių parametrų nustatymas. Norint panaudoti \textit{bluetooth} duomenų perdavimo ryšį, naudojamas UART protokolas. \textit{Atmega8} mirkovaldiklis taip pat turi aparatinio lygio UART protokolo bloką. Taigi tinkamam pastarojo veikimui, reikia jį įgalinti programiškai kaip ir I2C protokolą. Pasirinkta duomenų perdavimo sparta – 57 600 bodų per sekundę.
+Kaip matome iš \ref{fig:head_tracker} pav., programos kodo pradžioje vyksta kintamųjų sukūrimas bei naudojamų įėjimų išėjimų nustatymas. Kadangi naudojamų jutiklių duomenų perdavimo standartinis protokolas yra I2C\footnote{  I2C - (angl. \textit{Inter-Integrated Circuit}) -- tai Philips korporacijos sukurtas komunikavimo protokolas naudojamas žemo greičio įrenginiamssujungti su įterptinėmis sistemomis arba kompiuterių pagrindinėmis plokštėmis.}, todėl reikia įgyvendinti I2C protokolo nustatymo mikrovaldiklyje operacijas. Pasirinktas mikrovaldiklis \textit{Atmel Atmega8} savyje turi aparatinio lygio I2C valdymo bloką. Pagal specifikacinį AVR mikrovaldiklio aprašą, norint įgalinti I2C protokolą, reikia nustatyti duomenų perdavimo dažnį. Pasirinktas dažnis – 400 kHz. Tolimesnis programos kodas – tai jutiklių pradinių parametrų nustatymas. Norint panaudoti \textit{bluetooth} duomenų perdavimo ryšį, naudojamas UART protokolas. \textit{Atmega8} mirkovaldiklis taip pat turi aparatinio lygio UART protokolo bloką. Taigi tinkamam pastarojo veikimui, reikia jį įgalinti programiškai kaip ir I2C protokolą. Pasirinkta duomenų perdavimo sparta – 57 600 bitų per sekundę.
 
 \noindent
 Giroskopo L3G4200D pradiniai nustatymai:
@@ -455,7 +442,7 @@ Pasinaudojant Stepheno G. McGoverno straipsnyje „A Model for Room Acoustics“
 x_{i}=(-1)^{i}x_{S}+\left[ i+\frac{1-(-1)^{i}}{2}\right] x_{r}
 \label{equ:virtual_sounds}
 \end{equation}
-
+\noindent
 čia $x_{S}$ – tikrojo garso šaltinio x koordinatė, $x_{r}$ – kambario ilgis, $i$ – virtualaus garso šaltinio (atspindžio) eilės numeris. Atėmus iš virtualaus šaltinio $x$ koordinatės klausytojo taško $x$ koordinatę, galima rasti atstumą $x$ ašyje tarp klausytojo ir virtualaus šaltinio. Tai aprašo formulė \ref{equ:dist_x}, toliau sekančios formulės 4.5 ir 4.6 aprašo atstumą tarp klausytojo ir garso šaltinio $y$ ir $z$ ašyse atitinkamai:
 
 \begin{equation}
@@ -486,8 +473,8 @@ Toliau norint rasti kambario impulsinį atsaką reikia išsivesti vieneto impuls
 u_{ijk}(t)=\frac{d_{ijk}}{c}
 \label{equ:unit_impulse_resp}
 \end{equation}
-
-čia $t$ – laikas, $d_{ijk}$ – atstumas gautas iš \ref{equ:pitagor} formulės, $c$ – garso greitis (340.29 m/s), $\frac{d_{ijk}}{c}$ – efektinis kiekvieno atspindžio laiko skirtumas. Pasinaudojus \ref{equ:unit_impulse_resp} formule galima išsivesti ieškomą funkciją \ref{equ:unit_impulse_resp_funct}.
+\noindent
+čia $t$ – laikas, $d_{ijk}$ – atstumas gautas iš \ref{equ:pitagor} formulės, $c$ – garso greitis (340.29 m/s), $\frac{d_{ijk}}{c}$ – efektinis kiekvieno atspindžio laiko skirtumas. Pasinaudojus \ref{equ:unit_impulse_resp} formule išsivedama ieškomą funkciją \ref{equ:unit_impulse_resp_funct}.
 
 \begin{equation}
 a_{ijk}= \left\{
@@ -519,7 +506,7 @@ e_{ijk}	= b_{ijk} r_{ijk}
 \label{equ:full_impulse}
 \end{equation}
 
-Paskutinis žingsnis kambario impulsinio atsako skaičiavime yra sumavimas pagal \ref{equ:RIA_sum} formulę:
+Paskutinis žingsnis kambario impulsinio atsako skaičiavime -- sumavimas pagal \ref{equ:RIA_sum} formulę:
 
 \begin{equation}
 h(t) = \sum_{i=-n}^{n}\sum_{j=-n}^{n}\sum_{k=-n}^{n} a_{ijk} e_{ijk}
@@ -554,6 +541,7 @@ Garso šaltiniui nustatyti pakanka aprašyti jo vietą virtualiame kambaryje ($x
 Kadangi sistema dirba naudojant FT232 mikroschemą, būtina nurodyti virtualų COM prievadą, per kurį kompiuteryje esanti programa bei garso apdorojimo įrenginys komunuikuos. 
 
 \subsection{Realios sistemos specifikacija}
+\label{sec:realios_sistemos_specifikacija}
 
 Šiame poskyryje bus aptartas ir aprašytas realus įrenginys, pagrįstas anksčiau aprašytomis teorijomis. Reali sistema susideda iš programinės ir elektroninės dalių.
 
@@ -562,7 +550,7 @@ Kadangi sistema dirba naudojant FT232 mikroschemą, būtina nurodyti virtualų C
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=390px]{img/headtracker_schematic.png}
-  \caption{Galvos orientacijos sekimo įrenginio elektrinės principinės schemos mikrovaldiklio dalis}
+  \caption{Galvos sekimo įrenginio elektrinės principinės schemos mikrovaldiklio dalis}
   \label{fig:headtracker_schematic}
 \end{figure}
 
@@ -584,7 +572,7 @@ Tai yra maksimalus įmanomas (teorinis) Atmega8 taktinis darbo dažnis. Šį da�
   \label{fig:headtracker_stabilizer}
 \end{figure}
 
-\ref{fig:headtracker_stabilizer} pav. matoma galvos orientacijos sekimo įrenginio maitinimo šaltinio elektrinė principinė schema. Ji susideda iš dviejų įtampos stabilizatorių:  LM1117MPX-5.0 bei LM1117IMP-3.3. Abu stabilizatoriai stabilizuoja įėjimo įtampą atitinkamai – 5 V ir 3.3 V. Nepriekaištingam jų veikimui reikalingi filtro kondensatoriai jungiami lygiagrečiai su neigiamu šaltinio poliumi tiek prieš, reguliatorius tiek už jų. Įtampos stabilumas ypatingai svarbus žinant, jog mikrovaldiklis dirba gana aukštu dažniu – 16 MHz. Kaip ir buvo minėta anksčiau, 5 V maitinimo įtampa naudojama mikrovaldiklio daliai, o 3.3 V – \textit{bluetooth} moduliui.
+\ref{fig:headtracker_stabilizer} pav. matoma galvos orientacijos sekimo įrenginio maitinimo šaltinio elektrinė principinė schema. Ji susideda iš dviejų įtampos stabilizatorių:  LM1117MPX-5.0 bei LM1117IMP-3.3. Abu stabilizatoriai stabilizuoja įėjimo įtampą atitinkamai – 5 V ir 3,3 V. Nepriekaištingam jų veikimui reikalingi filtro kondensatoriai jungiami lygiagrečiai su neigiamu šaltinio poliumi tiek prieš, reguliatorius tiek už jų. Įtampos stabilumas ypatingai svarbus žinant, jog mikrovaldiklis dirba gana aukštu dažniu – 16 MHz. Kaip ir buvo minėta anksčiau, 5 V maitinimo įtampa naudojama mikrovaldiklio daliai, o 3,3 V – \textit{bluetooth} moduliui.
 
 \begin{figure}[htbp]
   \centering
@@ -597,7 +585,7 @@ Tai yra maksimalus įmanomas (teorinis) Atmega8 taktinis darbo dažnis. Šį da�
 
 \subsection{Skyriaus apibendrinimas}
 
-Šiame skyriuje buvo pateiktas ir aprašytas sistemos veikimas. Pateiktos blokinės schemos, trumpai aprašytas \textit{Matlab} terpėje sukurtas išeities kodas koncepcijai patikrinti. Realios sistemos specifikacijoje aprašyta sistemos schemotechnika, pademonstruotos ir paaiškintos darbo metu sukurtos plokštės.
+Šiame skyriuje buvo pateiktas ir aprašytas sistemos veikimas. Pateiktos struktūrinės schemos, trumpai aprašytas \textit{Matlab} terpėje sukurtas išeities kodas koncepcijai patikrinti. Skyriuje \ref{sec:realios_sistemos_specifikacija} aprašyta sistemos schemotechnika, pademonstruotos ir paaiškintos darbo metu sukurtos plokštės. Visos plokštės su asmeniniu kompiuteriu bendrauja naudojantis RS232 protokolą. Jis buvo pasirinktas dėl savo paprasto bei greito įgyvendinimo. Sistemoje naudojami jutikliai su mikrovaldikliu sujungti per I2C šyną, veikiančia 400 MHz sparta.
 
 Reikia paminėti, jog pateiktose schemose vis dar yra nedidelių netikslumų, kurie netrikdo bendro sistemos darbo, tačiau juos ištaisius galima pasiekti geresnius našumo rezultatus.
 
@@ -649,7 +637,7 @@ Patikra buvo atliekama naudojant skaitmeninį oscilografą. Matavimai buvo atlie
   \label{fig:headtracker_coldboot}
 \end{figure}
 
-Kaip matome iš \ref{fig:headtracker_coldboot} pav., įrenginio paleidimo metu srovė kyla nuo 50 mA iki ~170 mA. Tuo metu vyksta mikrovaldiklio, \textit{bluetooth} modulio kitos periferijos įgalinimas. Tolimesnis srovės suvartojimo svyravimas atsiranda dėl jutiklių duomenų nuskaitymo ir išsiuntimo per \textit{bluetooth} ryšį naudojant RS232 prievadą. Maksimalus srovės suvartojimas siekia apie 230 mA. Tai yra gana didelė reikšmė, žinant, kad įrenginys yra mobilus ir jo pagrindinis maitinimo šaltinis yra 9 V baterija. Didžiąją dalį srovės suvartoja \textit{bluetooth} modulis ir įtampos stabilizatoriai. Pagal specifikacinį aprašą, \textit{bluetooth} modulio vidutinis srovės suvartojimas siekia net 114 mA. Tai yra net pusė maksimalios suvartojamos elektros srovės. Taigi norint sumažinti bendrą energijos suvartojimą, reikia kiek įmanoma mažinti duomenų atnaujinimo dažnį ir naudoti energijos taupymo režimus. Taip pat didelę dalį energijos suvartojimo sudaro įtampos stabilizatoriai. Ant 5 V įtampos stabilizatoriaus atsiranda 4 V įtampos kritimas. Visas šis kritimas išspinduliuojamas šilumine energija į aplinką. Taip prarandamas didelis kiekis elektros energijos. Tai yra visiškai neefektyvu, bet taisytina. Vienas iš būdų – sumažinti elektros energijos maitinimo šaltinio įtampą. Dar vienas įtampos kritimas atsiranda ant 3.3 V įtampos stabilizatoriaus. Kadangi jis jungiamas jau po 5 V įtampos reguliatoriaus, tai atsiradęs kritimas tesiekia 1.7 V. Šioje vietoje sutaupyti energijos neišeina. Vienintelė išeitis – naudoti 3.3 V įtampa maitinamą mikrovaldiklį. \ref{fig:headtracker_5min} pav. matome galvos orientacijos sekimo įrenginio elektros srovės suvartojimo priklausomybę nuo laiko įjungimo metu, bet po 5 minučių nuo įrenginio veiklos pradžios.
+Kaip matome iš \ref{fig:headtracker_coldboot} pav., įrenginio paleidimo metu srovė kyla nuo 50 mA iki ~170 mA. Tuo metu vyksta mikrovaldiklio, \textit{bluetooth} modulio kitos periferijos įgalinimas. Tolimesnis srovės suvartojimo svyravimas atsiranda dėl jutiklių duomenų nuskaitymo ir išsiuntimo per \textit{bluetooth} ryšį naudojant RS232 prievadą. Maksimalus srovės suvartojimas siekia apie 230 mA. Tai yra gana didelė reikšmė, žinant, kad įrenginys yra mobilus ir jo pagrindinis maitinimo šaltinis yra 9 V baterija. Didžiąją dalį srovės suvartoja \textit{bluetooth} modulis ir įtampos stabilizatoriai. Pagal specifikacinį aprašą, \textit{bluetooth} modulio vidutinis srovės suvartojimas siekia net 114 mA. Tai yra net pusė maksimalios suvartojamos elektros srovės. Taigi norint sumažinti bendrą energijos suvartojimą, reikia kiek įmanoma mažinti duomenų atnaujinimo dažnį ir naudoti energijos taupymo režimus. Taip pat didelę dalį energijos suvartojimo sudaro įtampos stabilizatoriai. Ant 5 V įtampos stabilizatoriaus atsiranda 4 V įtampos kritimas. Visas šis kritimas išspinduliuojamas šilumine energija į aplinką. Taip prarandamas didelis kiekis elektros energijos. Tai yra visiškai neefektyvu, bet taisytina. Vienas iš būdų – sumažinti elektros energijos maitinimo šaltinio įtampą. Dar vienas įtampos kritimas atsiranda ant 3,3 V įtampos stabilizatoriaus. Kadangi jis jungiamas jau po 5 V įtampos reguliatoriaus, tai atsiradęs kritimas tesiekia 1.7 V. Šioje vietoje sutaupyti energijos neišeina. Vienintelė išeitis – naudoti 3,3 V įtampa maitinamą mikrovaldiklį. \ref{fig:headtracker_5min} pav. matome galvos orientacijos sekimo įrenginio elektros srovės suvartojimo priklausomybę nuo laiko įjungimo metu, bet po 5 minučių nuo įrenginio veiklos pradžios.
 
 \begin{figure}[htbp]
   \centering
@@ -713,7 +701,7 @@ Kaip buvo minėta įvade, vienas svarbiausių sistemos vertinimo kriterijų -- s
   \label{fig:garsas_diff}
 \end{figure}
 
-\ref{fig:garsas_diff} pav. iliustruoja garso takelių skirtumą. Kaip matome, maksimalus skirtumas yra 0,5 dB. Skirtumas, galimai, atsirado dėl originalaus garso takelio glaudinimo (nes originalaus binauralinio įrašo WAV byla buvo gauta ją konvertavus iš MP3 bylos), taip pat skirtumą sukuria skirtumai tarp aprašyto virtualaus kambario ir įrašymo metu buvusio tikrojo kambario parametrų. 
+\ref{fig:garsas_diff} pav. iliustruoja garso takelių skirtumą. Kaip matome, maksimalus skirtumas yra 0,5 dB. Skirtumas, galimai, atsirado dėl originalaus garso takelio glaudinimo (nes originalaus binauralinio įrašo WAV byla buvo gauta ją konvertavus iš MP3 bylos), taip pat skirtumą sukuria neatitikimai tarp darbo metu aprašyto virtualaus kambario ir įrašymo metu buvusio tikrojo kambario parametrų. 
 
 Kartu su generavimo tikslumu buvo matuojamas ir garso vėlinimas. Palyginus \ref{fig:garsas_orig} pav. su \ref{fig:garsas_gen} pav. galima pastebėti tam tikrą generuoto garso vėlavimą, kuris sudaro 2,3 ms. Tai pilnai atitinka darbo užduotyje nurodytą maksimalų 0,3 s garso vėlinimą.
 
