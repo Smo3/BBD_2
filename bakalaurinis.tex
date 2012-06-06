@@ -154,7 +154,7 @@ Pečių aidas -- tai aidas, atsirandantis garso bangom atsispindėjus nuo klausy
 
 TLS nusako laiko skirtumą tarp garso bangų, pakliuvusių į dešiniąją ir kairiąją ausis. TLS – tai pirminė garso lokalizacijos užuomina, padedanti nusakyti garso šaltinio padėtį erdvėje. Kadangi ausys yra atskirtos viena nuo kitos, garso banga nukeliauja skirtingą kelia prieš pasiekiant kiekvieną iš ausų.
 
-Tačiau išimtį sudaro garsas esantis tiesiai prieš arba už klausytojo. TLS taip pat įtakoja garso bangos fazės  pakitimą. Jeigu fazių skirtumas didesnis nei 180$^\circ$ laipsnių, nustatyti, kaip fazė yra pasislinkus, tampa sunku. Žemuose dažniuose fazės skirtumas nusako pakankamai didelį laiko skirtumą ir yra naudingas orientacijos nustatymui. Aukšto dažnio signalams 180$^\circ$ fazės poslinkis  nusakys mažesnį laiko skirtumą. Tai reiškia, kad ši savybė tampa mažiau naudinga garso bangoms, kurių dažnis priklausomai nuo kampo viršija 1500 Hz. [3,5]
+Tačiau išimtį sudaro garsas esantis tiesiai prieš arba už klausytojo. TLS taip pat įtakoja garso bangos fazės  pakitimą. Jeigu fazių skirtumas didesnis nei 180$^\circ$ laipsnių, nustatyti, kaip fazė yra pasislinkus, tampa sunku. Žemuose dažniuose fazės skirtumas nusako pakankamai didelį laiko skirtumą ir yra naudingas orientacijos nustatymui. Aukšto dažnio signalams 180$^\circ$ fazės poslinkis  nusakys mažesnį laiko skirtumą. Tai reiškia, kad ši savybė tampa mažiau naudinga garso bangoms, kurių dažnis priklausomai nuo kampo viršija 1500 Hz. [8]
 
 \subsection{Tarpausinis garso lygių skirtumas}
 TGLS nusako garso stiprumo skirtumą tarp dviejų taškų (ausų). Šis reiškinys pasireiškia, kai garso banga iš dalies yra blokuota galvos. Taip pat kaip ir TLS, TGLS negali tiksliai nusakyti skirtumo tarp garso, esančio tiesiai prieš arba už klausytojo. TGLS efektas taipogi kaip ir TLS turi dažninę priklausomybę. Žemuose dažniuose dėl difrakcijos tik maža garso bangos dalis yra blokuota galvos, todėl garso intensyvumo skirtumas pasidaro labai mažas.
@@ -250,7 +250,7 @@ Iš \ref{fig:125kHz_TGLS} ir \ref{fig:1000kHz_TGLS} pav. matome, jog lyginant du
 
 Kambario impulsinis atsakas KIA – tai yra laiko domeno signalas, parodantis dažnių pasiskirstymą ir amplitudės mažėjimą. Naudojant KIA daroma prielaida, jog kambario erdvės matematinis modelis yra stabili ir linijinė, laikui bėgant nekintanti sistema.
 
-KIA inkapsuliuoja šiuos parametrus:
+KIA inkapsuliuoja šiuos parametrus: [6]
 \begin{enumerate}
   \item Garso signalo vėlinimą (angl. \textit{propagation delay}) – atstumas laike, kurį garsas nukeliauja nuo garso šaltinio iki klausytojo.
   \item Tiesioginį garsą (angl. \textit{direct sound}) – tiesioginis garsas atitinka maksimumą, kuris nusako trumpiausią atstumą nuo garso šaltinio iki klausytojo.
@@ -302,20 +302,20 @@ Garso apdorojimo įrenginys – tai sukurta įterptinė sistema, skirta binaural
 \item triašis giroskopas – kampiniam pagreičiui trijose ašyse nustatyti.
 \end{itemize}
 
-Visi šie trys jutikliai turi savo privalumus ir trūkumus, tačiau \textit{sensor fusion} algoritmai padeda padidinti galutinių duomenų tikslumą. Dažniausiai naudojamas filtras -– Kalmano, tačiau dėl didelio matematinio skaičiavimo kiekio (kuris neigiamai įtakoja bendrą mažos galios įterptinės sistemos greitaveiką) šiame darbe buvo pasirinktas paprastesnis \textit{Madgwick sensor fusion} filtras. \textit{Madgwick} filtras turi tik vieną žingsnį, per kurį yra apskaičiuojami galutiniai duomenys. Šiame filtre yra atsisakoma nuspėjimo ir korekcijos žingsnių, kurie naudojami Kalmano filtre. Taip yra sutaupomas laikas, todėl padidėja greitaveika. Tačiau atsisakius prieš tai minėtų dviejų žingsnių suprastėja filtro savybės, nes neatsižvelgiama į prieš tai buvusius duomenis.
+Visi šie trys jutikliai turi savo privalumus ir trūkumus, tačiau \textit{sensor fusion} algoritmai padeda padidinti galutinių duomenų tikslumą. Dažniausiai naudojamas filtras -– Kalmano, tačiau dėl didelio matematinio skaičiavimo kiekio (kuris neigiamai įtakoja bendrą mažos galios įterptinės sistemos greitaveiką) šiame darbe buvo pasirinktas paprastesnis \textit{Madgwick sensor fusion} filtras. \textit{Madgwick} filtras turi tik vieną žingsnį, per kurį yra apskaičiuojami galutiniai duomenys.[11, 12] Šiame filtre yra atsisakoma nuspėjimo ir korekcijos žingsnių, kurie naudojami Kalmano filtre. Taip yra sutaupomas laikas, todėl padidėja greitaveika. Tačiau atsisakius prieš tai minėtų dviejų žingsnių suprastėja filtro savybės, nes neatsižvelgiama į prieš tai buvusius duomenis.
 
-Madgwicko filtre orientacijai nusakyti naudojami kvaternionai\footnote{  Kvaternionas (lot. \textit{quattor} – keturi) – skaičių aibė, nekomutatyvus kompleksinių skaičių aibės praplėtimas. }, tokiu būdu išvengiamas ašių blokavimo (angl. \textit{gimbal lock}) efektas. Kvaternionas savo paprasčiausioje formoje aprašomas formule: 
+Madgwicko filtre orientacijai nusakyti naudojami kvaternionai\footnote{  Kvaternionas (lot. \textit{quattor} – keturi) – skaičių aibė, nekomutatyvus kompleksinių skaičių aibės praplėtimas. }, tokiu būdu išvengiamas ašių blokavimo (angl. \textit{gimbal lock}) efektas. Kvaternionas savo paprasčiausioje formoje aprašomas formule: [11]
 
 \begin{equation}
 _{B}^{A}\hat{q}= \begin{bmatrix} q_{1} & q_{2} & q_{3} & q_{4}
 \end{bmatrix} = \begin{bmatrix}
 \cos\frac{\theta}{2} & -r_{x}\sin\frac{\theta}{2} & -r_{y}\sin\frac{\theta}{2} & -r_{z}\sin\frac{\theta}{2}
-\end{bmatrix}
+\end{bmatrix},
 \label{quaterion_1}
 \end{equation}
 
 \noindent
-\ref{quaterion_1}, čia $r_{x}$, $r_{y}$, $r_{z}$ yra vektoriaus $r$ kampų reikšmės, $\theta$ – pasukimo kampas, $q_{w}$, $q_{x}$, $q_{y}$, $q_{z}$ – kvaterniono $w$, $x$, $y$, $z$ dedamosios. 
+čia $r_{x}$, $r_{y}$, $r_{z}$ yra vektoriaus $r$ kampų reikšmės, $\theta$ – pasukimo kampas, $q_{w}$, $q_{x}$, $q_{y}$, $q_{z}$ – kvaterniono $w$, $x$, $y$, $z$ dedamosios. 
 
 \begin{figure}[!h]
   \centering
@@ -324,7 +324,7 @@ _{B}^{A}\hat{q}= \begin{bmatrix} q_{1} & q_{2} & q_{3} & q_{4}
   \label{fig:quaternion_2}
 \end{figure}
 
-\ref{fig:quaternion_2} pav. nusako rėmo\footnote{  Geometrijoje objekto (linijos, plokštumos ar kietojo kūno) orientacija erdvėje yra dažnai pateikiama kaip vieno rėmo orientacija kito rėmo atžvilgiu, tokiu atveju pirmasis rėmas vadinamas atskaitos rėmu (angl. \textit{frame of referrence}).} (angl. \textit{frame}) B orientaciją, jį pasukus kampu $\theta$ pagal $A_{\hat{r}}$  ašį, kai pradinė rėmo B orientacija buvo sutapusi su rėmo A orientacija.
+\ref{fig:quaternion_2} pav. nusako rėmo\footnote{  Geometrijoje objekto (linijos, plokštumos ar kietojo kūno) orientacija erdvėje yra dažnai pateikiama kaip vieno rėmo orientacija kito rėmo atžvilgiu, tokiu atveju pirmasis rėmas vadinamas atskaitos rėmu (angl. \textit{frame of referrence}).} (angl. \textit{frame}) B orientaciją, jį pasukus kampu $\theta$ pagal $A_{\hat{r}}$  ašį, kai pradinė rėmo B orientacija buvo sutapusi su rėmo A orientacija. [13]
 
 \begin{equation}
 _{B}^{A}R = \begin{bmatrix} 
@@ -348,7 +348,7 @@ Kaip matoma iš \ref{fig:quaternion_2} pav., apskaičiuoti kvaternionams reikali
   \label{fig:madgwick}
 \end{figure}
 
-Bendra filtro schema pavaizduota \ref{fig:madgwick} pav. Kur $^{S}\hat{m}_{t}$ magnetometro duomenys, $^{S}\hat{a}_{t}$ – akcelerometro, $^{S}\hat{\omega}_{t}$  – giroskopo parodymai. \ref{fig:madgwick} pav. parodo pilnąjį \textit{Madgwick} filtrą MARG sistemai. 1 grupė skirta pašalinti magnetometro magnetinius triukšmus (angl. \textit{Magnetic distortion}), 2 grupė skirta pasinaudojant akcelerometro ir magnetometro duomenimis sumažinti giroskopo dreifą. Tokiu būdu filtras įgauna magnetometro triukšmo ir giroskopo dreifo kompensavimo savybes. Filtro rezultatas – $_{E}^{S}\hat{q}_{est,t}$ pilna objekto orientacija žemės atžvilgiu išreikšta kvaternionu. 
+Bendra filtro schema pavaizduota \ref{fig:madgwick} pav. Kur $^{S}\hat{m}_{t}$ magnetometro duomenys, $^{S}\hat{a}_{t}$ – akcelerometro, $^{S}\hat{\omega}_{t}$  – giroskopo parodymai. \ref{fig:madgwick} pav. parodo pilnąjį \textit{Madgwick} filtrą MARG sistemai. 1 grupė skirta pašalinti magnetometro magnetinius triukšmus (angl. \textit{Magnetic distortion}), 2 grupė skirta pasinaudojant akcelerometro ir magnetometro duomenimis sumažinti giroskopo dreifą. Tokiu būdu filtras įgauna magnetometro triukšmo ir giroskopo dreifo kompensavimo savybes. Filtro rezultatas – $_{E}^{S}\hat{q}_{est,t}$ pilna objekto orientacija žemės atžvilgiu išreikšta kvaternionu. [12]
 
 \subsection{Garso apdorojimo mechanizmas}
 
@@ -403,7 +403,7 @@ Magnetometro LSM303DLH pradiniai nustatymai:
 \end{itemize}
 
 \noindent
-akcelerometro LSM303DLH pradiniai nustatymai:
+Akcelerometro LSM303DLH pradiniai nustatymai:
 
 \begin{itemize}
 \item Parenkamas 1000 Hz duomenų atnaujinimo dažnis
@@ -432,38 +432,38 @@ Pasinaudojant Stepheno G. McGoverno straipsnyje „A Model for Room Acoustics“
 \ref{equ:virtual_sounds} formulė padeda rasti virtualaus šaltinio (garso atspindžio) poziciją $x$ ašyje. 
 
 \begin{equation}
-x_{i}=(-1)^{i}x_{S}+\left[ i+\frac{1-(-1)^{i}}{2}\right] x_{r}
+x_{i}=(-1)^{i}x_{S}+\left[ i+\frac{1-(-1)^{i}}{2}\right] x_{r},
 \label{equ:virtual_sounds}
 \end{equation}
 \noindent
 čia $x_{S}$ – tikrojo garso šaltinio x koordinatė, $x_{r}$ – kambario ilgis, $i$ – virtualaus garso šaltinio (atspindžio) eilės numeris. Atėmus iš virtualaus šaltinio $x$ koordinatės klausytojo taško $x$ koordinatę, galima rasti atstumą $x$ ašyje tarp klausytojo ir virtualaus šaltinio. Tai aprašo formulė \ref{equ:dist_x}, toliau sekančios formulės 4.5 ir 4.6 aprašo atstumą tarp klausytojo ir garso šaltinio $y$ ir $z$ ašyse atitinkamai:
 
 \begin{equation}
-x_{i}=(-1)^{i}x_{S}+\left[ i+\frac{1-(-1)^{i}}{2}\right] x_{r}-x_{m}
+x_{i}=(-1)^{i}x_{S}+\left[ i+\frac{1-(-1)^{i}}{2}\right] x_{r}-x_{m},
 \label{equ:dist_x}
 \end{equation}
 
 \begin{equation}
-x_{i}=(-1)^{i}x_{S}+\left[ i+\frac{1-(-1)^{i}}{2}\right] y_{r}-y_{m}
+x_{i}=(-1)^{i}x_{S}+\left[ i+\frac{1-(-1)^{i}}{2}\right] y_{r}-y_{m},
 \label{equ:dist_y}
 \end{equation}
 
 \begin{equation}
-x_{i}=(-1)^{i}x_{S}+\left[ i+\frac{1-(-1)^{i}}{2}\right] z_{r}-z_{m}
+x_{i}=(-1)^{i}x_{S}+\left[ i+\frac{1-(-1)^{i}}{2}\right] z_{r}-z_{m}.
 \label{equ:dist_z}
 \end{equation}
 
-Rasti pilną atstumą kiekvienam virtualiam garso šaltiniui galima pasinaudojus Pitagoro teorema \ref{equ:pitagor} .
+Rasti pilną atstumą kiekvienam virtualiam garso šaltiniui galima pasinaudojus Pitagoro teorema \ref{equ:pitagor}.
 
 \begin{equation}
-d_{ijk}=\sqrt{x_{i}^{2}+y_{i}^{2}+z_{i}^{2}}
+d_{ijk}=\sqrt{x_{i}^{2}+y_{i}^{2}+z_{i}^{2}}.
 \label{equ:pitagor}
 \end{equation}
 
 Toliau norint rasti kambario impulsinį atsaką reikia išsivesti vieneto impulsinio atsako funkciją  (angl. \textit{unit impulse response function}). Padalinus \ref{equ:pitagor} formulę iš garso greičio ore gaunamas virtualaus garso šaltinio impulsinis atsakas \ref{equ:unit_impulse_resp}.
 
 \begin{equation}
-u_{ijk}(t)=\frac{d_{ijk}}{c}
+u_{ijk}(t)=\frac{d_{ijk}}{c}.
 \label{equ:unit_impulse_resp}
 \end{equation}
 \noindent
@@ -482,27 +482,27 @@ a_{ijk}= \left\{
 
 \begin{equation}
 b_{ijk}	\sim\frac{1}{d_{ijk}}
-\label{equ:unit_impulse_resp_corrected}
+\label{equ:unit_impulse_resp_corrected}.
 \end{equation}
 
 Kitas svarbus parametras yra garso atspindžio atsispindėjimų skaičius. Jei visų sienų atspindžių koeficientai vienodi, galima paimti atspindžio koeficientą $r_{w}$ keliant laipsniu $n$, kur $n$ yra bendras atspindžių skaičius, gauname $n=|i|+|j|+|k|$. Taigi atsispindėjimų skaičiui apskaičiuoti taikytina formulė \ref{equ:atspindziu_sk}:
 
 \begin{equation}
-r_{ijk}	= r_{w}^{|i|+|j|+|k|}
+r_{ijk}	= r_{w}^{|i|+|j|+|k|}.
 \label{equ:atspindziu_sk}
 \end{equation}
 
-Kad gauti pilnąjį signalo impulsą, reikia sudauginti \ref{equ:unit_impulse_resp_corrected} ir \ref{equ:atspindziu_sk} formules, taip gaunama formulė \ref{equ:full_impulse}.
+Kad gauti pilnąjį signalo impulsą, reikia sudauginti \ref{equ:unit_impulse_resp_corrected} ir \ref{equ:atspindziu_sk} formules, taip gaunama formulė:
 
 \begin{equation}
-e_{ijk}	= b_{ijk} r_{ijk}
+e_{ijk}	= b_{ijk} r_{ijk}.
 \label{equ:full_impulse}
 \end{equation}
 
-Paskutinis žingsnis kambario impulsinio atsako skaičiavime -- sumavimas pagal \ref{equ:RIA_sum} formulę:
+Paskutinis žingsnis kambario impulsinio atsako skaičiavime -- sumavimas pagal \ref{equ:RIA_sum} formulę: [6]
 
 \begin{equation}
-h(t) = \sum_{i=-n}^{n}\sum_{j=-n}^{n}\sum_{k=-n}^{n} a_{ijk} e_{ijk}
+h(t) = \sum_{i=-n}^{n}\sum_{j=-n}^{n}\sum_{k=-n}^{n} a_{ijk} e_{ijk}.
 \label{equ:RIA_sum}
 \end{equation}
 
@@ -745,26 +745,24 @@ Darbe panaudotos priemonės lūkesčius pateisino iš dalies. Kaip ir buvo galim
 %6
 \item J. Merimaa and V. Pulkki, Spatial Impulse Response Rendering I: Analysis and Synthesis, J. Audio Eng. Soc., vol. 53, no. 12, pp. 1115-1127, 2005. 
 %7
-\item D.R. Begault. 3D sound for virtual reality and multimedia. Academic Press. 1994.
+\item D.R. Begault. 3D sound for virtual reality and multimedia. Academic Press. 1994. Massachusetts Institute of Technology, 
 %8
-\item Massachusetts Institute of Technology, 
-%9
 \item K. Raghunath Rao and Jezekiel Ben-Arie, Optimal Head Related Transfer Functions for Hearing and Monaural Localization in Elevation: A Signal Processing Design Perspective, University of Illinois at Chicago, rupjūtis 2000.
-%10
+%9
 \item DeLiang Wang and Guy J. Brown, Computational Auditory Scene Analysis, John Wiley \& Sons, Inc., 2005
-%11
+%10
 \item J. L. Marins, Xiaoping Yun, E. R. Bachmann, R. B. McGhee, and M. J. Zyda. An extended
+%11
+\item Kalman filter for quaternion-based orientation estimation using marg sensors. In Proc. IEEE/RSJ International Conference on Intelligent Robots and Systems, volume 4, spalio 29 - lapkričio 3, 2001.
 %12
-\item Kalman filter for quaternion-based orientation estimation using marg sensors. In Proc. IEEE/RSJ International Conference on Intelligent Robots and Systems, volume 4, puslapiai 2003-2011, spalio 29 - lapkričio 3, 2001.
-%13
 \item An eficient orientation filter for inertial and inertial/magnetic sensor arrays, Sebastian O.H. Madgwick, balandžio 30, 2010
-%14
+%13
 \item New method for extracting the quaternion from a rotation matrix, Itzhack Y Bar-Itzhack, AIAA Journal of Guidance, Control and Dynamics, 23(6):10851087, lapkritis-gruodis 2000.
-%15
+%14
 \item Image Method for Eficiently Simulating Small Room Acoustics, J. Allen and D. Berkley, Journal of the Acoustical Society of America, vol. 65, no. 4, puslapiai. 943-950, 1979.
-%16
+%15
 \item Algorithmic representation of the ray tracing technique, A. Kulowski, Applied Acoustics, vol. 18, no. 6, puslapiai 449-469, 1985.
-%17
+%16
 \item Finite-difference time-domain simulation of low-frequency room acoustic problems, D. Botteldoore, Journal of the Acoustical Society of America, vol. 98, no. 6, puslapiai. 3302-3308, 1995.
 \end{enumerate}
 
