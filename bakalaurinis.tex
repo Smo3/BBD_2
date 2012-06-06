@@ -67,7 +67,7 @@ Pradiniai bandymai bus atlikti \textit{Matlab} terpėje, kas leis įsitikinti si
 
 Virtualios garso realybės tema buvo pasirinkta dėl savo perspektyvumo, nors binauralinis garsas pradėtas tirti pakankamai seniai, realiai veikiančių įrenginių nėra sukurta. Tema yra aktuali žaidimų ir medicinos pramonei.
 
-Didžiausia sistemos problema slypi HRTF panaudojime, kadangi HRTF deriniai turi būti pritaikyti individualiai kiekvienam klausytojui. Tačiau panaudojus papildomus procesus garso generavimo eigoje, pamėginta sumažinti HRTF neigiamą įtaką.
+Didžiausia sistemos problema slypi HRTF (angl. \textit{Head Related Transfer Function}) panaudojime, kadangi HRTF deriniai turi būti pritaikyti individualiai kiekvienam klausytojui. Tačiau panaudojus papildomus procesus garso generavimo eigoje, pamėginta sumažinti HRTF neigiamą įtaką.
 
 Darbo eigoje bus sukurta pilnai veikianti sistema, gebanti kuo tiksliau atkurti virtualią akustinę aplinką, programinė įranga bus parašyta garso apdorojimo, galvos orientacijos įrenginiams bei asmeniniam kompiuteriui. Taip pat bus suprojektuoti abu naudojami įrenginiai.
 
@@ -120,8 +120,6 @@ Pirmasis garso rinkoje pasirodęs produktas, galėjęs pasiūlyti trimatį pozic
 
 Taigi šiuo metu binauralinio garso generavimas realiu laiku priklausomas nuo vartotojo galvos pozicijos neturi jokių analogų. Kaip ir buvo minėta, atskirai abi dalys yra daugiau ar mažiau naudojamos pasaulinėje rinkoje, bet būtent šių dviejų sričių sujungimas yra unikalus.
 
-%TODO apibendrinimas
-
 \section{Naudojamų metodų apžvalga}
 \label{sect:naudojami_metodai}
 
@@ -129,7 +127,7 @@ Taigi šiuo metu binauralinio garso generavimas realiu laiku priklausomas nuo va
 
 \subsection{HRTF funkcijos}
 
-HRTF ir ATF yra porinės funkcijos, kurios nusako atsaką kaip žmogaus ausis priima sklindantį iš taško erdvėje garsą. Panaudojus HRTF porą, skirtą kiekvienai ausiai, įmanoma sintezuoti binauralinį garsą taip sukuriant erdvės pojūtį.  
+HRTF (dar vadinamos ATF) yra porinės funkcijos, kurios nusako atsaką kaip žmogaus ausis priima sklindantį iš taško erdvėje garsą. Panaudojus HRTF porą, skirtą kiekvienai ausiai, įmanoma sintezuoti binauralinį garsą taip sukuriant erdvės pojūtį.  
 Žmogaus smegenys apskaičiuoja garso šaltinio poziciją erdvėje naudojantis: 1) garso užuominomis atkeliavusiomis į kiekvieną ausį (angl. \textit{monoaural cues}), 2) abiejų ausų garso užuominų palyginimu (angl. \textit{difference cues} arba \textit{binaural cues}). Pagrindinės garso užuominos yra: [3,4]
 \begin{enumerate}
 \item Tarpausinis laiko skirtumas (angl. \textit{Interaural Time Difference}).
@@ -147,7 +145,7 @@ HRTF aprašo tik dalį iš aukščiau pateiktų užuominų: TLS ir TGLS.
 
 \subsection{Galvos šešėlis ir pečių aidas}
 
-Galvos šešėlis (angl. \textit{head shadow}) dar kitaip vadinamas akustiniu šešėliu. Tai sumažėjusios garso amplitudės sritis, kuri atsiranda dėl to, kad galva sugeria dalį garso bangų, o likusiųjų -- sumažina amplitudę. Pasiekusi galvą garso banga gali keliauti aplink arba kiaurai galvą, kad pasiektų ausies kriauklę, esančią priešingoje pusėje. Tokiu būdu yra sukuriamas pirminės lokalizacijos filtras. Ausį, esančią šešėlyje, garsas pasiekia maždaug 0,7 ms vėliau, todėl žmogaus smegenys sugeba nustatyti apytikslią garso sklidimo kryptį. 
+Galvos šešėlis (angl. \textit{head shadow}) dar kitaip vadinamas akustiniu šešėliu. Tai sumažėjusios garso amplitudės sritis, kuri atsiranda dėl to, kad galva sugeria dalį garso bangų, o likusiųjų -- sumažina amplitudę. Pasiekusi galvą garso banga gali keliauti aplink arba kiaurai galvą, kad pasiektų ausies kriauklę, esančią priešingoje pusėje. Tokiu būdu yra sukuriamas pirminės lokalizacijos filtras. Ausį, esančią šešėlyje, garsas pasiekia maždaug 0,7 ms vėliau, todėl žmogaus smegenys sugeba nustatyti apytikslią garso sklidimo kryptį. [3,4]
 
 Pečių aidas -- tai aidas, atsirandantis garso bangom atsispindėjus nuo klausytojo pečių. Toks aidas tiesiogiai turi mažai lokalizacijos informacijos, tačiau panaudojus jį kartu su galvos šešėliu, didėja galimybė tiksliau nustatyti garso šaltinio poziciją.
 
@@ -161,7 +159,7 @@ Tačiau išimtį sudaro garsas esantis tiesiai prieš arba už klausytojo. TLS t
 \subsection{Tarpausinis garso lygių skirtumas}
 TGLS nusako garso stiprumo skirtumą tarp dviejų taškų (ausų). Šis reiškinys pasireiškia, kai garso banga iš dalies yra blokuota galvos. Taip pat kaip ir TLS, TGLS negali tiksliai nusakyti skirtumo tarp garso, esančio tiesiai prieš arba už klausytojo. TGLS efektas taipogi kaip ir TLS turi dažninę priklausomybę. Žemuose dažniuose dėl difrakcijos tik maža garso bangos dalis yra blokuota galvos, todėl garso intensyvumo skirtumas pasidaro labai mažas.
 
-Tačiau aukštų dažnių ruože difrakcija pasireiškia žymiai mažiau, kas įtakoja žymiai didesnį garso lygių skirtumą (\ref{fig:ILD_1} pav.). Kai kuriais atvejais garso lygių skirtumas gali sudaryti iki 20 dB. Todėl TGLS yra dažniausiai naudojamas aukšto dažnio garso bangoms, o TLS žemo dažnio bangų krypčiai nustatyti. 
+Tačiau aukštų dažnių ruože difrakcija pasireiškia žymiai mažiau, kas įtakoja žymiai didesnį garso lygių skirtumą (\ref{fig:ILD_1} pav.). Kai kuriais atvejais garso lygių skirtumas gali sudaryti iki 20 dB. Todėl TGLS yra dažniausiai naudojamas aukšto dažnio garso bangoms, o TLS žemo dažnio bangų krypčiai nustatyti. [3,5]
 
 \begin{figure}[!ht]
   \centering
@@ -195,8 +193,6 @@ Veiksmas atliekamas atskirai dešiniajam ir kairiajam kanalams naudojant tą pat
 Duplekso teorija, pateikta Lordo Reilėjaus (Lord Rayleigh), pateikia paaiškinimus apie žmogaus galimybę lokalizuoti garsus pagal laiko skirtumą TLS tarp garsų, patenkančių į kiekvieną ausį ir taip pat skirtingo garso lygio TGLS patekimą į ausis. Bet iki šiol išlieka klausimas, ar šie skirtumai yra pastebimi.
 
 Duplekso teorija teigia, kad TLS naudojamas žemo dažnio garso šaltinio lokalizacijai, o TGLS – aukšto dažnio. Kadangi natūralus garsas sudarytas ne tik iš žemo dažnio komponentų, bet ir aukšto dažnio, tai klausos sistema turės panaudoti abi metodikas, norint tiksliai nustatyti garso šaltinio vietą. Šios dupleksinės sistemos rezultatas – ji gali generuoti „garso lokalizacijos užuominų mainų“  arba „laiko intensyvumo mainų“ dirgiklius ausinėse. Pastarosiose TLS, nukreiptas į kairiąją ausinių pusę kompensuoja TGLS, kuris nukreiptas į dešiniąją ausinių dalį, todėl garsas suvokiamas lyg sklistų iš vidurio. Duplekso teorija negali iki galo paaiškinti kryptingo girdėjimo, o taip pat išlieka priekinio-galinio garso šaltinio padėties girdimumo problema. Taip pat ši teorija apima tik horizontaliąją garso šaltinio lokalizaciją aplink galvą. Dar vienas teorijos netikslumas – lokalizacijos paaiškinime neatsižvelgiama į ausies kriauklės formą.
-
-%TODO: metai paeist i m.
 
 1938 m. Vudvortas atliko eksperimentą, kuriame iš pilnavidurio rutulio buvo sumodeliuota žmogaus galva. Su šiuo modeliu buvo matuojami TLS kaip kampo su vertikalia plokštuma funkcija skirtingiems dažniams. Šiame galvos modelyje tarpas tarp dviejų ausų buvo 22--23 cm. Pirminiai šio eksperimento rezultatai parodė, kad didžiausias laiko tarpas, per kurį garsas patenka iš vienos ausies į kitą, buvo apie 660 μs, kai garso šaltinis buvo padėtas lygiai 90$^\circ$ kampu vertikalios plokštumos atžvilgiu. Šis laiko tarpas susidaro, kai garso bangos dažnis siekia 1500 Hz. Rezultatai parodė, jog sklindant garsui, kurio dažnis mažesnis nei 1500~Hz bangos ilgis yra didesnis negu $660 ms$ laiko tarpo. Taigi rezultatai parodo, jog tarp garso bangų, patenkančių į ausis, atsiranda fazių skirtumas ir tai sukuria akustinės lokalizacijos užuominas. Garso dažniui artėjant prie 1500 Hz, garso bangos ilgis yra panašus į natūralų garso vėlavimą. Dėl galvos dydžio ir tarpo tarp ausų yra sumažėjęs fazių skirtumas, taigi iš karto atsiranda lokalizacijos paklaida. Garso dažniui esant didesniam nei 1500 Hz, garso bangos ilgis tampa mažesnis nei atstumas tarp ausų, tuomet atsiranda „galvos šešėlis“   ir GLS suteikia garso lokalizacijos užuominų.
 
@@ -739,7 +735,7 @@ Darbe panaudotos priemonės lūkesčius pateisino iš dalies. Kaip ir buvo galim
 %1
 \item http://windows.microsoft.com/en-us/windows/products/lifecycle
 %2
-\item http://www.tele.ucl.ac.be/digicom/bhatnagar/asee_HRTF.pdf
+\item http://www.tele.ucl.ac.be/digicom/bhatnagar/asee\_HRTF.pdf
 %3
 \item B. C. J. Moore, An Introduction to the Psychology of Hearing, 5th edition, Elsevier Academic Press, London, UK, 2004.
 %4
