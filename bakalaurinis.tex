@@ -2,6 +2,7 @@
 \usepackage[utf8x]{inputenc}
 \usepackage[L7x]{fontenc}
 \usepackage[lithuanian]{babel}
+\usepackage{xcolor}
 
 
 \author{Tomas Fedosejev, Marius Buinevičius\\Vilniaus Gedimino technikos
@@ -56,6 +57,7 @@
 \item TLS -- tarpausinis laiko skirtumas (angl. \textit{Interaural Time Difference}).
 \item USB -- universalioji nuoseklioji jungtis (angl. \textit{Universal Serial Bus}).
 \end{itemize}
+
 
 \section{Įvadas. Užduoties analizė}
 
@@ -196,7 +198,14 @@ Duplekso teorija teigia, kad TLS naudojamas žemo dažnio garso šaltinio lokali
 
 1938 m. Vudvortas atliko eksperimentą, kuriame iš pilnavidurio rutulio buvo sumodeliuota žmogaus galva. Su šiuo modeliu buvo matuojami TLS kaip kampo su vertikalia plokštuma funkcija skirtingiems dažniams. Šiame galvos modelyje tarpas tarp dviejų ausų buvo 22--23 cm. Pirminiai šio eksperimento rezultatai parodė, kad didžiausias laiko tarpas, per kurį garsas patenka iš vienos ausies į kitą, buvo apie 660 μs, kai garso šaltinis buvo padėtas lygiai 90$^\circ$ kampu vertikalios plokštumos atžvilgiu. Šis laiko tarpas susidaro, kai garso bangos dažnis siekia 1500 Hz. Rezultatai parodė, jog sklindant garsui, kurio dažnis mažesnis nei 1500~Hz bangos ilgis yra didesnis negu $660 ms$ laiko tarpo. Taigi rezultatai parodo, jog tarp garso bangų, patenkančių į ausis, atsiranda fazių skirtumas ir tai sukuria akustinės lokalizacijos užuominas. Garso dažniui artėjant prie 1500 Hz, garso bangos ilgis yra panašus į natūralų garso vėlavimą. Dėl galvos dydžio ir tarpo tarp ausų yra sumažėjęs fazių skirtumas, taigi iš karto atsiranda lokalizacijos paklaida. Garso dažniui esant didesniam nei 1500 Hz, garso bangos ilgis tampa mažesnis nei atstumas tarp ausų, tuomet atsiranda „galvos šešėlis“   ir GLS suteikia garso lokalizacijos užuominų.
 
-Feddersenas atliko eksperimentus (1957 m.), kuriais jis matavo, kaip kinta TLS, keičiant garsiakalbio kampą aplink galvą su vertikaliąja plokštuma, esant skirtingiems dažniams. Bet jo eksperimentai skyrėsi nuo Vudvorto tuo, kad Feddersenas atliko tyrimus su realiais žmonėmis, o ne su galvos modeliais. Šio eksperimento rezultatai sutapo su Vudvorto gautais rezultatais. Tyrimo rezultatai taip pat parodė, kad nėra jokio TLS skirtumo tarp dviejų garso šaltinio pozicijų – kai garso šaltinis yra priešais galvą (0$^\circ$) ir už galvos (180$^\circ$). Tokių rezultatų paaiškinimas – garso šaltinio atstumas iki ausų yra vienodas abiem atvejais. Laiko skirtumas keičiasi tik garso šaltiniui keliaujant aplink galvą. Šiuo eksperimentu įrodyta, kad didžiausias laiko skirtumas yra 660 μs ir jis gaunamas, garso šaltinį padėjus šalia ausies. \ref{fig:ITD_1} pav. pavaizduotas galvos modelis ir garso šaltinio skleidžiamų garso bangų kryptis ir susidarantis kampas.
+Feddersenas atliko eksperimentus (1957 m.), kuriais jis matavo, kaip kinta TLS, keičiant garsiakalbio kampą aplink galvą su vertikaliąja plokštuma, esant skirtingiems dažniams. Bet jo eksperimentai skyrėsi nuo Vudvorto tuo, kad Feddersenas atliko tyrimus su realiais žmonėmis, o ne su galvos modeliais. Šio eksperimento rezultatai sutapo su Vudvorto gautais rezultatais. Tyrimo rezultatai taip pat parodė, kad nėra jokio TLS skirtumo tarp dviejų garso šaltinio pozicijų – kai garso šaltinis yra priešais galvą (0$^\circ$) ir už galvos (180$^\circ$). Tokių rezultatų paaiškinimas – garso šaltinio atstumas iki ausų yra vienodas abiem atvejais. Laiko skirtumas keičiasi tik garso šaltiniui keliaujant aplink galvą. Šiuo eksperimentu įrodyta, kad didžiausias laiko skirtumas yra 660 μs ir jis gaunamas, garso šaltinį padėjus šalia ausies kriauklės. 
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=150px]{img/ITD.jpg}
+  \caption{Tarpausinis laiko skirtumas)}
+  \label{fig:ITD_1}
+\end{figure}
 
 Iš \ref{fig:ITD_1} pav. matoma, jog kelias nuo garso šalinio iki kiekvienos ausies yra skirtingas. Garso kelias iki kairės ausies yra didesnis, nei kelias iki dešinės ausies. Šis garso kelių skirtumas, perkeltas į lauko ašį, nusako tarpausinį laiko skirtumą TLS.
 TLS yra dominuojanti garso šaltinio lokalizacijos užuomina dažniams iki 1.5 kHz (imtinai). Visiems kitiems dažniams, didesniems nei 1,5 kHz dominuojanti užuomina yra tarpausinis garso lygio skirtumas TGLS. Tarpausinis garsio lygio skirtumas atsiranda dėl taip vadinamojo „galvos šešėlio“. Jis atsiranda tik prie aukštesnių dažnių, kuomet garso bangos nebesukelia difrakcijos aplink galvą, taip sukurdamos galvos šešėlį, kuris panašus į šešėlį, susidarantį krentant šviesos bangoms link galvos.
@@ -223,14 +232,14 @@ Norint įrodyti Lordo Reilėjaus teoriją, buvo atliktas eksperimentas, kuriame 
 
 \begin{figure}[!h]
   \centering
-  \includegraphics[width=150px]{img/125kHz_TGLS.png}
+  \includegraphics[width=250px]{img/125kHz_TGLS.png}
   \caption{Tarpausinis garso lygio skirtumas esant 125 kHz dažniui,\newline kai garso šaltinio kampas manekeno galvos atžvilgiu siekia 90$^\circ$}
   \label{fig:125kHz_TGLS}
 \end{figure}
 
 \begin{figure}[!h]
   \centering
-  \includegraphics[width=150px]{img/1000kHz_TGLS.png}
+  \includegraphics[width=250px]{img/1000kHz_TGLS.png}
   \caption{Tarpausinis garso lygio skirtumas esant 1 MHz dažniui,\newline kai garso šaltinio kampas manekeno galvos atžvilgiu siekia 90$^\circ$}
   \label{fig:1000kHz_TGLS}
 \end{figure}
@@ -274,7 +283,7 @@ Darbo metu sukurta garso apdorojimo sistema išnaudoja šiame skyriuje aprašytu
 
 \begin{figure}[!h]
   \centering
-  \includegraphics[width=450px]{img/schema.png}
+  \includegraphics[width=500px]{img/schema.png}
   \caption{Sistemos struktūrinė schema}
   \label{fig:full_schematic}
 \end{figure}
@@ -348,11 +357,11 @@ Kaip matoma iš \ref{fig:quaternion_2} pav., apskaičiuoti kvaternionams reikali
   \label{fig:madgwick}
 \end{figure}
 
-Bendra filtro schema pavaizduota \ref{fig:madgwick} pav. Kur $^{S}\hat{m}_{t}$ magnetometro duomenys, $^{S}\hat{a}_{t}$ – akcelerometro, $^{S}\hat{\omega}_{t}$  – giroskopo parodymai. \ref{fig:madgwick} pav. parodo pilnąjį \textit{Madgwick} filtrą MARG sistemai. 1 grupė skirta pašalinti magnetometro magnetinius triukšmus (angl. \textit{Magnetic distortion}), 2 grupė skirta pasinaudojant akcelerometro ir magnetometro duomenimis sumažinti giroskopo dreifą. Tokiu būdu filtras įgauna magnetometro triukšmo ir giroskopo dreifo kompensavimo savybes. Filtro rezultatas – $_{E}^{S}\hat{q}_{est,t}$ pilna objekto orientacija žemės atžvilgiu išreikšta kvaternionu. [12]
+Bendra filtro schema pavaizduota \ref{fig:madgwick} pav. Kur $^{S}\hat{m}_{t}$ magnetometro duomenys, $^{S}\hat{a}_{t}$ – akcelerometro, $^{S}\hat{\omega}_{t}$  – giroskopo parodymai. \ref{fig:madgwick} pav. parodo pilnąjį \textit{Madgwick} filtrą MARG sistemai. 1 grupė skirta pašalinti magnetometro magnetinius triukšmus (angl. \textit{Magnetic distortion}), 2 grupė skirta pasinaudojant akcelerometro ir magnetometro duomenimis sumažinti giroskopo dreifą. Tokiu būdu filtras įgauna magnetometro triukšmo ir giroskopo dreifo kompensavimo savybes. Filtro rezultatas -– $_{E}^{S}\hat{q}_{est,t}$ tai yra pilna objekto orientacija žemės atžvilgiu išreikšta kvaternionu. [12]
 
 \subsection{Garso apdorojimo mechanizmas}
 
-Garso apdorojimo įrenginio programinę įrangą sudaro dvi dalys – programinė įranga asmeniniame kompiuteryje bei programinė įranga, esanti pačiame garso apdorojimo įrenginyje. Norint įgyvendinti aparatinio lygmens garso išvestį, visų pirma, reikia skaitmeninio garso duomenų bei aparatinės įrangos, skirtos skaitmeninį garsą paversti į analoginį (SAK – skaitmeninis analoginis keitiklis). Skaitmeninio garso informacija bei duomenys siunčiami naudojant RS232 protokolą. Šių duomenų šaltinis – asmeninis kompiuteris su savo programine įranga. Skaitmeninio garso duomenų siuntimui į SAK naudojamas I2S protokolas. Dažniausiai protokolas naudojamas sujungus tam tikro formato dekoderius ir skaitmeninius-analoginius keitiklius tarpusavyje. Protokolo fizinis lygmuo susideda iš trijų linijų – valdančioji bitų perdavimo dažnio, kanalo pasirinkimo bei duomenų perdavimo. Duomenys šiuo protokolu siunčiami sinchroniniu būdu. T. y. duomenys nuskaitomi tik esant aukštam valdančiosios bitų perdavimo linijos įtampos lygiui. Kanalo parinkimas (kairiojo ar dešiniojo) vyksta keičiant kanalo parinkimo linijos įtampos lygį. Šis keitimas privalo būti atliktas prieš perduodant paskutinį esamojo kanalo duomenų bitą. \ref{fig:garso_apdorojimas} pav. pavaizduota garso apdorojimo įrenginio programos algoritmo blokinė diagrama.
+Garso apdorojimo įrenginio programinę įrangą sudaro dvi dalys – programinė įranga asmeniniame kompiuteryje bei programinė įranga, esanti pačiame garso apdorojimo įrenginyje. Norint įgyvendinti aparatinio lygmens garso išvestį, visų pirma, reikia skaitmeninio garso duomenų bei aparatinės įrangos, skirtos skaitmeninį garsą paversti į analoginį (SAK – skaitmeninis analoginis keitiklis). Skaitmeninio garso informacija bei duomenys siunčiami naudojant RS232 protokolą. Šių duomenų šaltinis – asmeninis kompiuteris su savo programine įranga. Skaitmeninio garso duomenų siuntimui į SAK naudojamas I2S protokolas. Dažniausiai protokolas naudojamas sujungus tam tikro formato dekoderius ir skaitmeninius-analoginius keitiklius tarpusavyje. Protokolo fizinis lygmuo susideda iš trijų linijų – valdančioji bitų perdavimo dažnio, kanalo pasirinkimo bei duomenų perdavimo. Duomenys šiuo protokolu siunčiami sinchroniniu būdu. T. y. duomenys nuskaitomi tik esant aukštam valdančiosios bitų perdavimo linijos įtampos lygiui. Kanalo parinkimas (kairiojo ar dešiniojo) vyksta keičiant kanalo parinkimo linijos įtampos lygį. Šis keitimas privalo būti atliktas prieš perduodant paskutinį esamojo kanalo duomenų bitą. \ref{fig:garso_apdorojimas} pav. pavaizduota sukurta garso apdorojimo įrenginio programos algoritmo blokinė diagrama.
 
 \begin{figure}[!ht]
   \centering
@@ -363,12 +372,25 @@ Garso apdorojimo įrenginio programinę įrangą sudaro dvi dalys – programin�
 
 Kaip matoma iš \ref{fig:garso_apdorojimas} pav., programos algoritmas prasideda nuo RS232 bei I2S protokolų inicializacijos. STM32F407-VGT, kaip ir 8 bitų AVR mikrovaldiklis, turi aparatinio lygmens RS232 protokolą. Pastarajame naudojamas 8N1 standartas – 8 duomenų perdavimo bitai, 1 pradžios bitas, 1 sustojimo bitas ir jokio lyginumo bito. Skaitmeninio garso duomenų perdavimui naudojamas I2S protokolas. Pasirinktas 32 bitų mikrovaldiklis turi aparatinio lygmens I2S protokolą. Taigi, norint įgalinti protokolą, reikia įrašyti tam tikras vertes į atitinkamus registrus programiškai. Toliau programos algoritme seka „handshake“ signalas. Tai tam tikras sutartinis „pasisveikinimo“ signalas siunčiamas RS232 protokolu asmeniniam kompiuteriui. Jeigu gaunamas teigiamas atsakymas, tuomet algoritmas tęsiamas. Jei negaunamas joks atsakymas, tikrinama ar praėjo 5 sekundės nuo „pasisveikinimo“ signalo išsiuntimo. Praėjus minėtam laikui registruojama programos algoritmo klaida ir programa yra užbaigiama. Jei 5 sekundės nepraėjo, tuomet toliau laukiamas atsakymas. Kai sulaukiamas „pasisveikinimo“ patvirtinimas, programos algoritmas tęsiamas toliau. Tolimesnė programos eiga -- gaunamas skaitmeninio garso duomenų aprašas. Pavyzdžiui, 16 bitų duomenys vienam kanalui, 44,1 kHz diskretizavimo dažnis. Gavus šį aprašą, sukonfigūruojamos garso išvesties funkcijos pagal gautą formatą. Toliau programa pereina prie begalinio ciklo, kuriame vyksta visos likusios operacijos galutiniam garso išvedimui į ausines. Visų pirma, per RS232 sąsają gaunamos WAV\footnote{  WAV (angl. \textit{Waveform Audio File Format}) -- neglaudintas audio bylos formatas.} failo amplitudžių vertės. Sekančiame žingsnyje vyksta visos apdorojimo bei modifikavimo, pagal esamą žmogaus galvos orientaciją, operacijos. \textit{Matlab} kodo fragmente \ref{code:conv_sound} pateiktas pavizdys, kaip sąsukos būdu yra kodifikuojamas garsas. Visos modifikuotos amplitudžių vertės paruošiamos galutiniam panaudojimui ir saugomos rezultatų masyve. Vertės iš rezultatų masyvo paeiliui siunčiamos į skaitmeninį-analoginį keitiklį I2S protokolui.
 
-\begin{cfigure}
+\begin{figure}[!h]
   \centering
+  \includegraphics[width=380px]{img/conv1.png}
   \caption{Sąsukos taikymas garso apdorojimo įrenginyje. \textit{Matlab} kodo fragmentas}
   \label{code:conv_sound}
-  \lstinputlisting{sources/conv.m}
-\end{cfigure}
+\end{figure}
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=380px]{img/conv2.png}
+  \caption{Sąsukos taikymas garso apdorojimo įrenginyje. \textit{Matlab} kodo fragmentas}
+\end{figure}
+
+%\begin{cfigure}
+%  \centering
+%  \caption{Sąsukos taikymas garso apdorojimo įrenginyje. \textit{Matlab} kodo fragmentas}
+%  \label{code:conv_sound}
+%  \lstinputlisting{sources/conv.m}
+%\end{cfigure}
 
 \newpage
 
@@ -416,20 +438,22 @@ Atlikus jutiklių parametrų nustatymus, programos algoritmas pereina prie begal
 
 \subsection{Binauralinio garso efekto mechanizmo algoritmas}
 
-\ref{fig:binaural_schem} pav. iliustruoja sukurtą mechanizmą binauraliniam garsui generuoti. Kaip matoma iš \ref{fig:binaural_schem} pav. pateiktos schemos, pirmasis žingsnis turint originalaus garso duomenis yra apskaičiuoti KIA abiem ausims. Pagal gautą KIA funkciją sąsukos veiksmu modifikuojamas originalus garsas. Įvykdžius šį žingsnį vieno kanalo garsas tampa dvikanaliu. Gautas tarpinis garso signalas sujungiamas su parinktu HRTF filtru. Po šio žingsnio gaunamas binauralinis garso signalas.
+Sukurtą mechanizmą binauraliniam garsui generuoti iliustruoja \ref{fig:binaural_schem} pav. Kaip matoma iš  pateiktos schemos, pirmasis žingsnis turint originalaus garso duomenis yra apskaičiuoti KIA abiem ausims. Pagal gautą KIA rezultatą sąsukos veiksmu modifikuojamas originalus garsas. Įvykdžius šį žingsnį vieno kanalo garsas tampa dvikanaliu. Toliau yra apskaičiuojamas kampas tarp klausytojo ir garso šaltinio ir parenkamas atitinkamas HRTF filtras. KIA garso modifikavimo žingsnyje gautas tarpinis garso signalas sujungiamas su parinktu HRTF filtru. Po šio žingsnio gaunamas binauralinis garso signalas.
 
-\begin{figure}[!ht]
+\begin{figure}[!h]
   \centering
-  \includegraphics[width=300px]{img/binaural_schem.png}
+  \includegraphics[width=400px]{img/binaural_schem.png}
   \caption{Galvos sekimo įrenginio programos algoritmo blokinė diagrama}
   \label{fig:binaural_schem}
 \end{figure}
+
+\newpage
 
 \subsection{KIA generavimas}
 
 Žemiau yra pateikta \textit{Matlab} funkcija generuoti kambario impulsiniam atsakui pasinaudojus skyriuje \ref{sect:naudojami_metodai} aprašyta teorine dalimi bei \ref{sect:KIA} poskyryje išsakytomis prielaidomis.
 Pasinaudojant Stepheno G. McGoverno straipsnyje „A Model for Room Acoustics“ aprašytomis formulėmis galima sukurti paprastą kambario impulsinio atsako filtrą.
-\ref{equ:virtual_sounds} formulė padeda rasti virtualaus šaltinio (garso atspindžio) poziciją $x$ ašyje. 
+\ref{equ:virtual_sounds} formulė padeda rasti virtualaus šaltinio (garso atspindžio) poziciją $x$ ašyje. [14, 15, 16]
 
 \begin{equation}
 x_{i}=(-1)^{i}x_{S}+\left[ i+\frac{1-(-1)^{i}}{2}\right] x_{r},
@@ -508,12 +532,20 @@ h(t) = \sum_{i=-n}^{n}\sum_{j=-n}^{n}\sum_{k=-n}^{n} a_{ijk} e_{ijk}.
 
 Pateiktas \textit{Matlab} paketo išeities kodo fragmentas \ref{code:RIA_gen} skirtas generuoti šiame poskyryje aprašytą kambario impulsinį atsaką.
 
-\begin{cfigure}
+
+\begin{figure}[!h]
   \centering
+  \includegraphics[width=500px]{img/KIA.png}
   \caption{KIA generavimo \textit{Matlab} funkcija}
   \label{code:RIA_gen}
-  \lstinputlisting{sources/RIA.m}
-\end{cfigure}
+\end{figure}
+
+%\begin{cfigure}
+%  \centering
+%  \caption{KIA generavimo \textit{Matlab} funkcija}
+%  \label{code:RIA_gen}
+%  \lstinputlisting{sources/RIA.m}
+%\end{cfigure}
 
 \newpage
 
@@ -529,7 +561,7 @@ Kadangi sistema pritaikyta asmeniniam kompiuteriui, ji privalo turėti grafinę 
 \end{figure}
 
 Kaip matoma iš \ref{fig:GUI} pav., vartotojo sąsaja yra pakankamai minimalistinė ir lengvai perprantama. Programinės įrangos langas suskirstytas į dvi dalis: kambario ir garso šaltinio informacijos nustatymus.
-Teisingam sistemos darbui, būtina nustatyti pagrindinius kambario parametrus reikalingus KIA generavimui. Parametrų sąrašą sudaro: ilgis, plotis, aukštis ir kambario sienų sugerties koeficientas $R$, pastarasis turi būti -1$\leq$R$\leq$1 intervale.
+Teisingam sistemos darbui, būtina nustatyti pagrindinius kambario parametrus reikalingus KIA generavimui. Parametrų sąrašą sudaro: ilgis, plotis, aukštis ir kambario sienų sugerties koeficientas $R$, pastarasis turi būti $-1 \leq R \leq 1$ intervale.
 Garso šaltiniui nustatyti pakanka aprašyti jo vietą virtualiame kambaryje ($x$, $y$, $z$) ir nurodyti garso bylą.
 Kadangi sistema dirba naudojant FT232 mikroschemą, būtina nurodyti virtualų COM prievadą, per kurį kompiuteryje esanti programa bei garso apdorojimo įrenginys komunuikuos. 
 
@@ -769,49 +801,45 @@ Darbe panaudotos priemonės lūkesčius pateisino iš dalies. Kaip ir buvo galim
 \section*{PRIEDAI}
 \addcontentsline{toc}{section}{PRIEDAI}
 
-\subsection*{1 priedas. Garso apdorojimo įrenginio pagrindinė funkcija.}
+\subsection*{1 priedas. Demonstracinė programa ir jos pirminis tekstas}
+\subsection*{2 priedas. Eksperimentinės patikros rezultatai}
+\subsection*{3 priedas. Sistemos struktūrinės schemos}
+\subsection*{4 priedas. Programos algoritmas}
 
-\begin{cfigure}[h]
+\begin{cfigure}[!h]
   \centering
-  \caption{Garso apdorojimo įrenginio pagrindinė funkcija}
   \lstinputlisting{sources/STM32_MAIN.c}
 \end{cfigure}
 
-\begin{cfigure}[h]
+\begin{cfigure}[!h]
   \centering
-  \caption{Garso apdorojimo įrenginio pagrindinė funkcija. Tęsinys.}
   \lstinputlisting{sources/STM32_MAIN2.c}
 \end{cfigure}
 
-\subsection*{2 priedas. Galvos orientacijos įtaiso elektrinė -- principinė schema}
+\newpage
 
-\begin{figure}[h]
+\begin{figure}[!h]
   \centering
-  \includegraphics[width=430px]{img/priedas_schema.png}
-  \caption{Galvos orientacijos įtaiso elektrinė -- principinė schema}
+  \includegraphics[width=400px]{img/rez1.png}
 \end{figure}
 
 
-\subsection*{3 priedas. Sistemos struktūrinės schemos}
-
-\begin{figure}[h]
+\begin{figure}[!h]
   \centering
-  \includegraphics[width=430px]{img/priedas_strukturine_schema.png}
-  \caption{Sistemos struktūrinė schema}
+  \includegraphics[width=400px]{img/priedas_strukturine_schema.png}
 \end{figure}
 
-\subsection*{4 priedas. Programos algoritmas}
-
-\begin{figure}[h]
+\begin{figure}[!h]
   \centering
-  \includegraphics[width=430px]{img/priedas_sound_algoritmas.png}
-  \caption{Garso apdorojimo įrenginio algoritmas}
+  \includegraphics[width=400px]{img/priedas_head_algoritmas.png}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[!h]
   \centering
-  \includegraphics[width=430px]{img/priedas_head_algoritmas.png}
-  \caption{Galvos sekimo įrenginio algoritmas}
+  \includegraphics[width=400px]{img/priedas_sound_algoritmas.png}
 \end{figure}
+
+\newpage
+
 
 \end{document}
