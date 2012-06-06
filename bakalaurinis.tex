@@ -612,6 +612,8 @@ Tai yra maksimalus įmanomas (teorinis) Atmega8 taktinis darbo dažnis. Šį da�
 
 Šiame skyriuje buvo pateiktas ir aprašytas sistemos veikimas. Pateiktos struktūrinės schemos, trumpai aprašytas \textit{Matlab} terpėje sukurtas išeities kodas koncepcijai patikrinti. Skyriuje \ref{sec:realios_sistemos_specifikacija} aprašyta sistemos schemotechnika, pademonstruotos ir paaiškintos darbo metu sukurtos plokštės. Visos plokštės su asmeniniu kompiuteriu bendrauja naudojantis RS232 protokolą. Jis buvo pasirinktas dėl savo paprasto bei greito įgyvendinimo. Sistemoje naudojami jutikliai su mikrovaldikliu sujungti per I2C šyną, veikiančia 400 MHz sparta.
 
+Sistema garso apdorojimui naudoja \textit{ST Electronics} gamybos mikroprocesoriu STM32F407VGT6 dirbantį 168 MHz taktiniu dažniu ir turintį savyje DSP (angl. \textit{digital signal processing}) įrenginį naudojama sąsukos veiksmui apskaičiuoti.
+
 Reikia paminėti, jog pateiktose schemose vis dar yra nedidelių netikslumų, kurie netrikdo bendro sistemos darbo, tačiau juos ištaisius galima pasiekti geresnius našumo rezultatus.
 
 \section{Sistemos patikra}
@@ -728,11 +730,11 @@ Kaip buvo minėta įvade, vienas svarbiausių sistemos vertinimo kriterijų -- s
 
 \ref{fig:garsas_diff} pav. iliustruoja garso takelių skirtumą. Kaip matome, maksimalus skirtumas yra 0,5 dB. Skirtumas, galimai, atsirado dėl originalaus garso takelio glaudinimo (nes originalaus binauralinio įrašo WAV byla buvo gauta ją konvertavus iš MP3 bylos), taip pat skirtumą sukuria neatitikimai tarp darbo metu aprašyto virtualaus kambario ir įrašymo metu buvusio tikrojo kambario parametrų. 
 
-Kartu su generavimo tikslumu buvo matuojamas ir garso vėlinimas. Palyginus \ref{fig:garsas_orig} pav. su \ref{fig:garsas_gen} pav. galima pastebėti tam tikrą generuoto garso vėlavimą, kuris sudaro 2,3 ms. Tai pilnai atitinka darbo užduotyje nurodytą maksimalų 0,3 s garso vėlinimą.
+Kartu su generavimo tikslumu buvo matuojamas ir garso vėlinimas. Palyginus \ref{fig:garsas_orig} pav. su \ref{fig:garsas_gen} pav. galima pastebėti tam tikrą generuoto garso vėlavimą, kuris sudaro 53 ms. Tai pilnai atitinka darbo užduotyje nurodytą maksimalų 0,1 s garso vėlinimą.
 
 \subsection{Skyriaus apibendrinimas}
 
-Šiame skyriuje buvo aptarti pagrindiniai sistemos parametrai ir savybės. Bandymų metu sistema parodė labai gerą veikimą, kuris pilnai atitinka darbo užduotyje nurodytus parametrus: bendras sistemos vėlinimas sudaro 2,3 ms; galvos sekimo įrenginio paklaida neviršija 15\%; sistemos maksimalus elektros srovės suvartojimas tesiekia tik apie 340 mA. Esamos sistemos parametrai vertinami labai gerai. Bendras sistemos darbo algoritmas gali būti patobulintas, kas leistų dar labiau sumažinti suvartojamą srovę, galvos sekimo įrenginio paklaidą bei vėlinimą.
+Šiame skyriuje buvo aptarti pagrindiniai sistemos parametrai ir savybės. Bandymų metu sistema parodė labai gerą veikimą, kuris pilnai atitinka darbo užduotyje nurodytus parametrus: bendras sistemos vėlinimas sudaro 53 ms; galvos sekimo įrenginio paklaida neviršija 15~\%; sistemos maksimalus elektros srovės suvartojimas tesiekia tik 340 mA. Esamos sistemos parametrai vertinami labai gerai. Bendras sistemos darbo algoritmas gali būti patobulintas, kas leistų dar labiau sumažinti suvartojamą srovę, galvos sekimo įrenginio paklaidą bei vėlinimą.
 
 \section{Rezultatų apibendrinimas. Išvados}
 
@@ -740,19 +742,20 @@ Kartu su generavimo tikslumu buvo matuojamas ir garso vėlinimas. Palyginus \ref
 Bakalaurinio darbo metu ištirta galimybė realiuoju laiku generuoti binauralinį garsą priklausomai nuo vartotojo galvos orientacijos. Kompiuterinių simuliacijų eigoje nustatyta, jog tokia sistema gali būti sukurta. Tuo remiantis, buvo sukurtas sistemos prototipas, pilnai atitinkantis visus darbo pradžioje iškeltus reikalavimus. Sistema yra tobulintina, tačiau pilnai atlieka visas užsibrėžtas funkcijas.
 
 % Kiek gerai veikia sukurtas produktas?
-Sistemos patikros metu nustatytas patenkinamas generavimo tikslumas -- galvos sekimo įrenginio paklaida neviršyja 15\%; generuojamas binauralinis garsas praktiškai tiksliai atkartoja eksperimentinį garsą. Bendras garso vėlinimas siekia ne daugiau nei 2,3 ms.
+Sistemos patikros metu nustatytas patenkinamas generavimo tikslumas -- galvos sekimo įrenginio paklaida neviršyja 15~\%; generuojamas binauralinis garsas beveik tiksliai atkartoja eksperimentinį garsą. Bendras sistemos vėlinimas siekia ne daugiau nei 53 ms.
 
 Galvos sekimo įrenginyje naudojamas mažos galios \textit{bluetooth} siųstuvas -- imtuvas, bet įrenginys atitinka, priimtą pagal Europos Bendrijos Tarybos direktyvą 89/336/EEB, Elektromagnetinio suderinamumo techninį reglamentą (EMS reglamentas).
 
 Garso apdorojimo įrenginio terminės savybės yra geresnės lyginant su galvos orientacijos sekimo įrenginiu. Tai įtakoja mikrovaldiklis ir periferija, kuri maitinama 3,3 V elektros įtampa, todėl įtaisas yra ganėtinai ekonomiškesnis ir mažiau kaista.
 
-Kol kas visos sistemos elektroninė dalis yra tik prototipo stadijoje, todėl visi atlikti matavimai yra preliminarūs ir ateityje gali keistis. Visos sistemos maksimalus elektros srovės suvartojimas tesiekia tik apie 340 mA, o tai atitinka užduoties reikalavimus (500 mA). Esamą srovės suvartojimą dar galima sumažinti anksčiau minėtais būdais 5.1.2 ir 5.2.1 poskyriuose, bet tai yra ateities planai ir šiuo metu tai nėra ypatingai aktualu, norint įrodyti ir pademonstruoti sistemos veikimą.
+Kol kas visos sistemos elektroninė dalis yra tik prototipo stadijoje, todėl visi atlikti matavimai yra preliminarūs ir ateityje gali keistis. Visos sistemos maksimalus elektros srovės suvartojimas tesiekia tik apie 340 mA, o tai atitinka užduoties reikalavimus (500 mA). Esamą srovės suvartojimą dar galima sumažinti sistemos patikros skyriuje minėtais būdais, bet tai yra ateities planai ir šiuo metu tai nėra ypatingai aktualu, norint įrodyti ir pademonstruoti sistemos veikimą.
 
 % Ar visus iškeltus uždavinius pavyko sėkmingai išspręsti, įgyvendinti?
-Visi darbo užduotyje iškelti uždaviniai buvo sėkmingai išspręsti ir įgyvendinti. Nors sukurtas algoritmas veikia pakankamai gerai, tačiau kaip buvo minėta anksčiau -- yra tobulintinas.
+Visi darbo užduotyje iškelti uždaviniai buvo sėkmingai išspręsti ir įgyvendinti. Binauralinis garso generavimo vėlinimas ir kita sistemos perfirija atitinka darbo užduotyje keliamus reikalavimus. Nors sukurtas algoritmas veikia gerai, tačiau kaip buvo minėta anksčiau -- yra tobulintinas. 
+
+Sistema garso apdorojimui naudoja \textit{ST Electronics} gamybos mikroprocesoriu STM32F407VGT6 dirbantį 168 MHz taktiniu dažniu ir turintį savyje DSP  įrenginį naudojamą sąsukos veiksmui apskaičiuoti. pagalbinis mikrovaldiklis -- \textit{Atmel AtMega8} skirtas duomenims galvos orientacijos įrenginio jutiklių duomenų surinkimui ir išsiuntimui. Šiuo metu programinės įrangos išeities kodas sudaro 17524 eilutes iš kurių: 741 eilutė -- asmeninio kompiuterio programinė įranga; 16353 eilutės -- garso apdorojimo įrenginio išeities kodas; 430 eilutės -- galvos sekimo įrenginio programa.
 
 % Ką reiktų ir būtų galima daryti kitaip, norint pagerinti gautus rezultatus ?
-
 Gautus rezultatus galima pagerinti, tam sukūrus tobulesnį binauralinio garso generavimo algoritmą, atsižvelgus į didesnį kiekį aplinkos parametrų bei paderinus naudojamas HRTF funkcijas konkrečiam klausytojui. Iš viso darbo metu buvo panaudoti 504 universalūs HRTF deriniai. Norint išgauti pačius geriausius rezultatus reikėtų panaudoti 32400 personalizuotų HRTF derinių.
 
 Taip pat, patogesniam vartojimui, reikėtų galvos sekimo įrenginį dar labiau sumažinti, nors dabartinis svoris bei dydis yra patogūs naudojimui. Kompaktiškesnis įrenginys suteiktų dar daugiau laisvės vartotojui.
