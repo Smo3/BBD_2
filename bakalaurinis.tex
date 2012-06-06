@@ -73,8 +73,7 @@ Darbo eigoje bus sukurta pilnai veikianti sistema, gebanti kuo tiksliau atkurti 
 
 Baigiamojo bakalauro darbo sistemos asmeninio kompiuterio programinei įrangai reikalingos mažiausiai 20MB diskinio kaupiklio dalies talpos. Toks atminties kiekis 
 reikalingas norint vartotojo sąsają padaryti patrauklesnę vartotojui, t. y. grafinės iliustracijos, garsai ir kt. Asmeniniame kompiuteryje programinė įranga dirba 
-\textit{Windows 7} operacinėje sistemoje, nes senesnių operacinių sistemų versijų (\textit{XP}, \textit{Vista}) \textit{Microsoft} korporacijos palaikymas bus 
-nutraukiamas artimiausiu metu.
+\textit{Windows 7} operacinėje sistemoje, nes senesnių operacinių sistemų versijų (\textit{XP}, \textit{Vista}) \textit{Microsoft} korporacijos palaikymas bus nutraukiamas artimiausiu metu. [1]
 
 Garso apdorojimo įrenginyje bus naudojama ne mažesnė nei 1.1 USB prievado versija, nes sistema suprojektuota darbui su šia ar aukštesnėmis versijomis. Duomenų perdavimą būtų galima realizuoti ir kitomis sąsajomis, tokiomis kaip RS232 nuosekliuoju prievadu, bet tokiu atveju greitis būtų nepakankamas ir sistema neatitiktų darbo užduotyje nurodyto vėlinimo. Be to, binauralinio garso generavimo sistema yra šiuolaikinė ir labiau taikoma nešiojamiems kompiuteriams, kuriuose nebediegiami RS232 prievadai. Galimybė naudoti RS232 prievadą įmanoma, bet tokiu atveju tektų papildomai turėti iš USB į COM keitiklio kabelį, kuris taip pat naudoja USB jungtį. Todėl geriausias pasirinkimas spartos atžvilgiu rinktis virtualų COM prievadą per USB jungtį.
 
@@ -92,7 +91,7 @@ Sistemos veikimas bus vertinamas sugeneruoto binauralinio garso tikslumu (palygi
 
 Orientacijos sekimo įrenginiai naudojami norint nustatyti lėktuvų  trimatę poziciją. Pati \textit{sensor fusion} technologija taip pat jau gana ilgai naudojama aviacijos srityje, norint kur kas tiksliau nustatyti poziciją.
 
-Tokio tipo sistemų pasaulyje yra tik keletas. Projekto tikslas – binauralinio garso generavimas realiu laiku. Vienas iš projektų naudojo \textit{Texas instruments} pagamintą plokštę -- C6713 DSK, kuri pavaizduota \ref{fig:C6713_dsk_board} pav.
+Tokio tipo sistemų pasaulyje yra tik keletas. Projekto tikslas – binauralinio garso generavimas realiu laiku. Vienas iš projektų naudojo \textit{Texas instruments} pagamintą plokštę -- C6713 DSK, kuri pavaizduota \ref{fig:C6713_dsk_board} pav. [2]
 
 \begin{figure}[!ht]
   \centering
@@ -131,7 +130,7 @@ Taigi šiuo metu binauralinio garso generavimas realiu laiku priklausomas nuo va
 \subsection{HRTF funkcijos}
 
 HRTF ir ATF yra porinės funkcijos, kurios nusako atsaką kaip žmogaus ausis priima sklindantį iš taško erdvėje garsą. Panaudojus HRTF porą, skirtą kiekvienai ausiai, įmanoma sintezuoti binauralinį garsą taip sukuriant erdvės pojūtį.  
-Žmogaus smegenys apskaičiuoja garso šaltinio poziciją erdvėje naudojantis: 1) garso užuominomis atkeliavusiomis į kiekvieną ausį (angl. \textit{monoaural cues}), 2) abiejų ausų garso užuominų palyginimu (angl. \textit{difference cues} arba \textit{binaural cues}). Pagrindinės garso užuominos yra:
+Žmogaus smegenys apskaičiuoja garso šaltinio poziciją erdvėje naudojantis: 1) garso užuominomis atkeliavusiomis į kiekvieną ausį (angl. \textit{monoaural cues}), 2) abiejų ausų garso užuominų palyginimu (angl. \textit{difference cues} arba \textit{binaural cues}). Pagrindinės garso užuominos yra: [3,4]
 \begin{enumerate}
 \item Tarpausinis laiko skirtumas (angl. \textit{Interaural Time Difference}).
 \item Tarpausinis garso lygių skirtumas (angl. \textit{Interaural Level Difference}).
@@ -157,7 +156,7 @@ Pečių aidas -- tai aidas, atsirandantis garso bangom atsispindėjus nuo klausy
 
 TLS nusako laiko skirtumą tarp garso bangų, pakliuvusių į dešiniąją ir kairiąją ausis. TLS – tai pirminė garso lokalizacijos užuomina, padedanti nusakyti garso šaltinio padėtį erdvėje. Kadangi ausys yra atskirtos viena nuo kitos, garso banga nukeliauja skirtingą kelia prieš pasiekiant kiekvieną iš ausų.
 
-Tačiau išimtį sudaro garsas esantis tiesiai prieš arba už klausytojo. TLS taip pat įtakoja garso bangos fazės  pakitimą. Jeigu fazių skirtumas didesnis nei 180$^\circ$ laipsnių, nustatyti, kaip fazė yra pasislinkus, tampa sunku. Žemuose dažniuose fazės skirtumas nusako pakankamai didelį laiko skirtumą ir yra naudingas orientacijos nustatymui. Aukšto dažnio signalams 180$^\circ$ fazės poslinkis  nusakys mažesnį laiko skirtumą. Tai reiškia, kad ši savybė tampa mažiau naudinga garso bangoms, kurių dažnis priklausomai nuo kampo viršija 1500 Hz.
+Tačiau išimtį sudaro garsas esantis tiesiai prieš arba už klausytojo. TLS taip pat įtakoja garso bangos fazės  pakitimą. Jeigu fazių skirtumas didesnis nei 180$^\circ$ laipsnių, nustatyti, kaip fazė yra pasislinkus, tampa sunku. Žemuose dažniuose fazės skirtumas nusako pakankamai didelį laiko skirtumą ir yra naudingas orientacijos nustatymui. Aukšto dažnio signalams 180$^\circ$ fazės poslinkis  nusakys mažesnį laiko skirtumą. Tai reiškia, kad ši savybė tampa mažiau naudinga garso bangoms, kurių dažnis priklausomai nuo kampo viršija 1500 Hz. [3,5]
 
 \subsection{Tarpausinis garso lygių skirtumas}
 TGLS nusako garso stiprumo skirtumą tarp dviejų taškų (ausų). Šis reiškinys pasireiškia, kai garso banga iš dalies yra blokuota galvos. Taip pat kaip ir TLS, TGLS negali tiksliai nusakyti skirtumo tarp garso, esančio tiesiai prieš arba už klausytojo. TGLS efektas taipogi kaip ir TLS turi dažninę priklausomybę. Žemuose dažniuose dėl difrakcijos tik maža garso bangos dalis yra blokuota galvos, todėl garso intensyvumo skirtumas pasidaro labai mažas.
@@ -176,9 +175,9 @@ Taipogi labai svarbi yra spektrinė dedamoji (angl. \textit{pinnae effect}). Dė
 
 \subsection{HRTF metodo panaudojimas}
 
-Norint panaudoti šį metodą reikia turėti HRTF rinkinį visiems vertikalių ir horizontalių kampų deriniams. Šiame darbe naudojami Masačiuseco technologijų instituto (angl. \textit{Massachusetts Institute of Technology}) 1994 metais atlikto projekto \textit{KEMAR} metu gauti universalūs HRTF deriniai.
+Norint panaudoti šį metodą reikia turėti HRTF rinkinį visiems vertikalių ir horizontalių kampų deriniams. Šiame darbe naudojami Masačiuseco technologijų instituto (angl. \textit{Massachusetts Institute of Technology}) 1994 metais atlikto projekto \textit{KEMAR} metu gauti universalūs HRTF deriniai.[5]
 
-Turint baigtinio ilgio skaitmeninį garso signalą atliekama diskrečioji sąsuka (angl. \textit{convolution}) pagal \ref{equ:conv_1} formulę:
+Turint baigtinio ilgio skaitmeninį garso signalą atliekama diskrečioji sąsuka (angl. \textit{convolution}) pagal \ref{equ:conv_1} formulę: [3]
 
 \begin{equation}
 (f * g)[n] = \sum_{m=0}^{\infty} f[m]*g[n-m]=\sum_{m=0}^{\infty} f[n-m]*g[n]
@@ -187,7 +186,7 @@ Turint baigtinio ilgio skaitmeninį garso signalą atliekama diskrečioji sąsuk
 \noindent
 čia $f$ – vieno kanalo baigtinio ilgio daugianaris (angl. \textit{polynomial}), $g$ – atitinkamo kanalo HRTF funkcija (išreikšta daugianariu), $n$ – daugianario narių skaičius.
 
-Šioje formulėje atliekama dviejų daugianarių daugyba, rezultate gauto daugianario koeficientai atitinka originalaus daugianario ($f$) koeficientų seką po sąsukos, visi likę nežinomi koeficientai yra prilyginami nuliui, kad nekiltų neapibrėžtumas. Šis veiksmas dar žinomas kaip dviejų daugianarių koeficientų \textit{Kauči} daugyba (angl. \textit{Cauchy product}).
+Šioje formulėje atliekama dviejų daugianarių daugyba, rezultate gauto daugianario koeficientai atitinka originalaus daugianario ($f$) koeficientų seką po sąsukos, visi likę nežinomi koeficientai yra prilyginami nuliui, kad nekiltų neapibrėžtumas. Šis veiksmas dar žinomas kaip dviejų daugianarių koeficientų \textit{Kauči} daugyba (angl. \textit{Cauchy product}). [3]
 
 Veiksmas atliekamas atskirai dešiniajam ir kairiajam kanalams naudojant tą patį garso signalą su atitinkamai dešiniajai arba kairiajai ausiai skirta HRTF funkcija.
 
@@ -737,20 +736,39 @@ Darbe panaudotos priemonės lūkesčius pateisino iš dalies. Kaip ir buvo galim
 \section{Literatūros ir informacinių šaltinių sąrašas}
 
 \begin{enumerate}
-\item J. Merimaa and V. Pulkki, Spatial Impulse Response Rendering I: Analysis and Synthesis, J. Audio Eng. Soc., vol. 53, no. 12, pp. 1115-1127, 2005. 
+%1
+\item http://windows.microsoft.com/en-us/windows/products/lifecycle
+%2
+\item http://www.tele.ucl.ac.be/digicom/bhatnagar/asee_HRTF.pdf
+%3
 \item B. C. J. Moore, An Introduction to the Psychology of Hearing, 5th edition, Elsevier Academic Press, London, UK, 2004.
-\item D.R. Begault. 3D sound for virtual reality and multimedia. Academic Press. 1994.
-\item Massachusetts Institute of Technology, 
-\item Internetas, “http://sound.media.mit.edu/KEMAR.html”, rugpjūčio 2006.
+%4
 \item Jyri Huopaniemi and Matti Karjalainen, HRTF Filter design based on auditory criteria, Proceedings of Nordic Acoustical Meeting, Helsinki, Helsinki University of Technology, Finland. balandis 1996.
+%5
+\item Internetas, “http://sound.media.mit.edu/KEMAR.html”, rugpjūčio 2006.
+%6
+\item J. Merimaa and V. Pulkki, Spatial Impulse Response Rendering I: Analysis and Synthesis, J. Audio Eng. Soc., vol. 53, no. 12, pp. 1115-1127, 2005. 
+%7
+\item D.R. Begault. 3D sound for virtual reality and multimedia. Academic Press. 1994.
+%8
+\item Massachusetts Institute of Technology, 
+%9
 \item K. Raghunath Rao and Jezekiel Ben-Arie, Optimal Head Related Transfer Functions for Hearing and Monaural Localization in Elevation: A Signal Processing Design Perspective, University of Illinois at Chicago, rupjūtis 2000.
+%10
 \item DeLiang Wang and Guy J. Brown, Computational Auditory Scene Analysis, John Wiley \& Sons, Inc., 2005
+%11
 \item J. L. Marins, Xiaoping Yun, E. R. Bachmann, R. B. McGhee, and M. J. Zyda. An extended
+%12
 \item Kalman filter for quaternion-based orientation estimation using marg sensors. In Proc. IEEE/RSJ International Conference on Intelligent Robots and Systems, volume 4, puslapiai 2003-2011, spalio 29 - lapkričio 3, 2001.
+%13
 \item An eficient orientation filter for inertial and inertial/magnetic sensor arrays, Sebastian O.H. Madgwick, balandžio 30, 2010
+%14
 \item New method for extracting the quaternion from a rotation matrix, Itzhack Y Bar-Itzhack, AIAA Journal of Guidance, Control and Dynamics, 23(6):10851087, lapkritis-gruodis 2000.
+%15
 \item Image Method for Eficiently Simulating Small Room Acoustics, J. Allen and D. Berkley, Journal of the Acoustical Society of America, vol. 65, no. 4, puslapiai. 943-950, 1979.
+%16
 \item Algorithmic representation of the ray tracing technique, A. Kulowski, Applied Acoustics, vol. 18, no. 6, puslapiai 449-469, 1985.
+%17
 \item Finite-difference time-domain simulation of low-frequency room acoustic problems, D. Botteldoore, Journal of the Acoustical Society of America, vol. 98, no. 6, puslapiai. 3302-3308, 1995.
 \end{enumerate}
 
@@ -800,22 +818,6 @@ Darbe panaudotos priemonės lūkesčius pateisino iš dalies. Kaip ir buvo galim
   \centering
   \includegraphics[width=430px]{img/priedas_head_algoritmas.png}
   \caption{Galvos sekimo įrenginio algoritmas}
-\end{figure}
-
-\subsection*{5 priedas. Sistemos veikimą iliustruojantis plakatas}
-
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=460px]{img/priedas_plakatas_2.png}
-  %\caption{Garso apdorojimo įrenginio algoritmas}
-\end{figure}
-
-\subsection*{6 priedas. Užduoties ir rezultatų plakatas}
-
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=420px]{img/priedas_plakatas_1.png}
-  %\caption{Garso apdorojimo įrenginio algoritmas}
 \end{figure}
 
 \end{document}
